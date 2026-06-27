@@ -4,12 +4,41 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ===== ChainGPT self-hosted display font ===== */
+@font-face {
+  font-family: "VioletSans";
+  src: url("/fonts/VioletSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+  --font-sans: "VioletSans", "Arial", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "VioletSans", "Arial", sans-serif;
+  --font-mono: var(--font-roboto-mono), "Roboto Mono", ui-monospace, monospace;
+  --font-inter: var(--font-inter), "Inter", sans-serif;
   --font-heading: var(--font-sans);
+
+  /* ChainGPT brand tokens (theme-responsive — driven by the vars below) */
+  --color-cgpt-bg: var(--cgpt-bg);
+  --color-cgpt-bg-2: var(--cgpt-bg-2);
+  --color-cgpt-fg: var(--cgpt-fg);
+  --color-cgpt-fg-bright: var(--cgpt-fg-bright);
+  --color-cgpt-muted: var(--cgpt-muted);
+  --color-cgpt-line: var(--cgpt-line);
+  --color-cgpt-card: var(--cgpt-card);
+  --color-cgpt-card-2: var(--cgpt-card-2);
+  /* Plain neon-red accent — all former rainbow accents collapse to red */
+  --color-cgpt-violet: #ff2d46;
+  --color-cgpt-violet-light: #ff5566;
+  --color-cgpt-violet-2: #ff4458;
+  --color-cgpt-coral: #ff2d46;
+  --color-cgpt-gold: #ff2d46;
+  --color-cgpt-teal: #ff2d46;
+
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -48,73 +77,98 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* Theme-independent tokens (brand gradient + radius) */
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  /* Plain neon red — replaces the former multi-colour rainbow everywhere it's used
+     (button borders, underlines, gradient-text, dividers, glows). */
+  --cgpt-gradient: linear-gradient(90deg, #ff2d46, #ff5566);
+  --cgpt-gradient-soft: linear-gradient(90deg, #ff2d4680, #ff556680);
+  --radius: 0.5rem;
+
+  /* Accent colors are shared by both themes */
+  --primary: #ff2d46;
+  --primary-foreground: #f8f8fa;
+  --destructive: oklch(0.704 0.191 22.216);
+  --ring: #ff5566;
+  --chart-1: #724ce8;
+  --chart-2: #26f4d0;
+  --chart-3: #f8cf3e;
+  --chart-4: #fc6756;
+  --chart-5: #8e84ff;
+  --sidebar-primary: #7d63ff;
+  --sidebar-primary-foreground: #f8f8fa;
+  --sidebar-ring: #5240b5;
 }
 
+/* ===== Dark theme (default) ===== */
+:root,
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  color-scheme: dark;
+
+  /* ChainGPT brand surfaces/text */
+  --cgpt-bg: #0a090f;
+  --cgpt-bg-2: #09090e;
+  --cgpt-fg: #efefe5;
+  --cgpt-fg-bright: #f8f8fa;
+  --cgpt-muted: #8b8b96;
+  --cgpt-line: rgba(255, 255, 255, 0.1);
+  --cgpt-card: #101018;
+  --cgpt-card-2: #15151f;
+
+  /* shadcn tokens mapped onto the same palette */
+  --background: var(--cgpt-bg);
+  --foreground: var(--cgpt-fg);
+  --card: var(--cgpt-card);
+  --card-foreground: var(--cgpt-fg);
+  --popover: #14141d;
+  --popover-foreground: var(--cgpt-fg);
+  --secondary: #181822;
+  --secondary-foreground: var(--cgpt-fg);
+  --muted: #181822;
+  --muted-foreground: var(--cgpt-muted);
+  --accent: #1d1d28;
+  --accent-foreground: var(--cgpt-fg);
+  --border: var(--cgpt-line);
+  --input: rgba(255, 255, 255, 0.15);
+  --sidebar: var(--cgpt-bg);
+  --sidebar-foreground: var(--cgpt-fg);
+  --sidebar-accent: #1d1d28;
+  --sidebar-accent-foreground: var(--cgpt-fg);
+  --sidebar-border: var(--cgpt-line);
+}
+
+/* ===== Light theme — dark-grey variant (light text on grey) ===== */
+.light {
+  color-scheme: dark;
+
+  --cgpt-bg: #16161a;
+  --cgpt-bg-2: #121215;
+  --cgpt-fg: #efefe5;
+  --cgpt-fg-bright: #f8f8fa;
+  --cgpt-muted: #9a9aa4;
+  --cgpt-line: rgba(255, 255, 255, 0.1);
+  --cgpt-card: #1f1f24;
+  --cgpt-card-2: #26262c;
+
+  --background: var(--cgpt-bg);
+  --foreground: var(--cgpt-fg);
+  --card: var(--cgpt-card);
+  --card-foreground: var(--cgpt-fg);
+  --popover: #1b1b20;
+  --popover-foreground: var(--cgpt-fg);
+  --secondary: #1f1f25;
+  --secondary-foreground: var(--cgpt-fg);
+  --muted: #1f1f25;
+  --muted-foreground: var(--cgpt-muted);
+  --accent: #26262c;
+  --accent-foreground: var(--cgpt-fg);
+  --border: var(--cgpt-line);
+  --input: rgba(255, 255, 255, 0.15);
+  --sidebar: var(--cgpt-bg);
+  --sidebar-foreground: var(--cgpt-fg);
+  --sidebar-accent: #26262c;
+  --sidebar-accent-foreground: var(--cgpt-fg);
+  --sidebar-border: var(--cgpt-line);
 }
 
 @layer base {
@@ -123,8 +177,139 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: "VioletSans", Arial, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   html {
     @apply font-sans;
+    scroll-behavior: smooth;
   }
+  /* Roboto Mono is used for nav links, labels, eyebrows */
+  .font-mono {
+    font-family: var(--font-roboto-mono), "Roboto Mono", monospace;
+  }
+}
+
+/* ===== ChainGPT utilities ===== */
+@layer utilities {
+  /* Rainbow gradient text */
+  .cgpt-gradient-text {
+    background: var(--cgpt-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  /* Rainbow gradient applied as a 1px border via mask */
+  .cgpt-gradient-border {
+    position: relative;
+  }
+  .cgpt-gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: var(--cgpt-gradient);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+  /* Frosted-glass surface for buttons / pills */
+  .cgpt-glass {
+    background-color: rgba(255, 255, 255, 0.06);
+    -webkit-backdrop-filter: blur(10px) saturate(150%);
+    backdrop-filter: blur(10px) saturate(150%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.14),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+      0 8px 24px -10px rgba(0, 0, 0, 0.6);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .cgpt-glass:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.22),
+      0 10px 30px -10px rgba(0, 0, 0, 0.65);
+  }
+  .hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Eyebrow / mono label */
+  .cgpt-eyebrow {
+    font-family: var(--font-roboto-mono), "Roboto Mono", monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.75rem;
+  }
+}
+
+/* ===== Keyframes ===== */
+@keyframes cgpt-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes cgpt-marquee-reverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+@keyframes cgpt-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+@keyframes cgpt-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@keyframes cgpt-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes cgpt-fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-cgpt-marquee { animation: cgpt-marquee 40s linear infinite; }
+.animate-cgpt-marquee-reverse { animation: cgpt-marquee-reverse 40s linear infinite; }
+.animate-cgpt-float { animation: cgpt-float 6s ease-in-out infinite; }
+.cgpt-cursor::after {
+  content: "_";
+  animation: cgpt-blink 1.1s step-end infinite;
+}
+
+/* HUD connector beam: a single red glowing line of light flowing into the robot.
+   pathLength is normalized to 100 on the paths, so the dash math matches any
+   line length. A short dash pattern scrolls continuously → a steady stream. */
+@keyframes cgpt-beam {
+  /* pathLength is normalized to 100, so a full -100 offset travels the whole
+     beam exactly once → a seamless loop with no visible jump. */
+  to { stroke-dashoffset: -100; }
+}
+/* continuous solid red beam body */
+.cgpt-beam-base {
+  fill: none;
+  stroke: #ff2d46;
+  stroke-width: 2;
+  opacity: 0.45;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+/* a single bright red light pulse that flows along the solid beam */
+.cgpt-beam {
+  fill: none;
+  stroke: #ff2d46;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 6px rgba(255, 45, 70, 0.9));
+  /* one lit segment + gap over the normalized length → a single flowing pulse */
+  stroke-dasharray: 16 84;
+  animation: cgpt-beam 2s linear infinite;
 }
