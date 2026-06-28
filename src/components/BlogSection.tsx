@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { DoubleDotsIcon, ArrowDiagonalIcon } from "@/components/icons";
 
@@ -74,7 +75,7 @@ function CornerBrackets() {
   );
 }
 
-function BlogCard({ post }: { post: BlogPost }) {
+function BlogCard({ post, index }: { post: BlogPost; index: number }) {
   return (
     <a
       href="#blog"
@@ -85,13 +86,16 @@ function BlogCard({ post }: { post: BlogPost }) {
         "sm:w-[58vw] md:w-[42vw] lg:w-[calc((100%-2.5rem)/3.2)]",
       )}
     >
-      {/* Image placeholder */}
+      {/* Image */}
       <div className="relative aspect-[16/10] w-full overflow-hidden rounded-md bg-cgpt-card-2">
-        <div
-          className="absolute inset-0 opacity-[0.18] transition-opacity duration-300 group-hover:opacity-30"
-          style={{ background: "var(--cgpt-gradient)" }}
+        <Image
+          src={`/images/cards/bl-${String(index + 1).padStart(2, "0")}.jpg`}
+          alt={post.title}
+          fill
+          sizes="(max-width: 768px) 82vw, (max-width: 1024px) 42vw, 380px"
+          className="object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-[1.03]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-cgpt-bg/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-cgpt-bg/80 via-cgpt-bg/20 to-transparent" />
         <CornerBrackets />
         <span className="absolute bottom-3 right-3 text-cgpt-fg/40">
           <DoubleDotsIcon />
@@ -147,8 +151,8 @@ export function BlogSection() {
 
         {/* Cards row */}
         <div className="hide-scrollbar -mx-5 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 lg:-mx-8 lg:px-8">
-          {POSTS.map((post) => (
-            <BlogCard key={post.title} post={post} />
+          {POSTS.map((post, i) => (
+            <BlogCard key={post.title} post={post} index={i} />
           ))}
         </div>
 

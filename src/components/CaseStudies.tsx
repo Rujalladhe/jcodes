@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import {
   DoubleDotsIcon,
@@ -145,7 +146,7 @@ export function CaseStudies() {
         ref={scrollerRef}
         className="hide-scrollbar mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-2"
       >
-        {CASE_STUDIES.map((cs) => (
+        {CASE_STUDIES.map((cs, i) => (
           <article
             key={cs.title}
             className="group relative flex w-[88%] shrink-0 snap-start flex-col rounded-lg border border-cgpt-line p-4 transition-colors hover:border-white/30 sm:w-[60%] lg:w-[calc((100%-3rem)/3)]"
@@ -156,12 +157,17 @@ export function CaseStudies() {
             <span className="pointer-events-none absolute -bottom-px -left-px h-3 w-3 rounded-bl-[3px] border-b border-l border-white/40" />
             <span className="pointer-events-none absolute -bottom-px -right-px h-3 w-3 rounded-br-[3px] border-b border-r border-white/40" />
 
-            {/* image placeholder */}
+            {/* image */}
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-md bg-cgpt-card-2">
-              <div
-                className="absolute inset-0 opacity-20"
-                style={{ background: "var(--cgpt-gradient)" }}
+              <Image
+                src={`/images/cards/cs-${String(i + 1).padStart(2, "0")}.jpg`}
+                alt={cs.title}
+                fill
+                sizes="(max-width: 640px) 88vw, (max-width: 1024px) 60vw, 420px"
+                className="object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-[1.03]"
               />
+              {/* subtle dark overlay to keep the tag legible */}
+              <div className="absolute inset-0 bg-cgpt-bg/35" />
               {/* tag pill */}
               <span
                 className={cn(
