@@ -164,7 +164,7 @@ export function CaseStudies() {
                 alt={cs.title}
                 fill
                 sizes="(max-width: 640px) 88vw, (max-width: 1024px) 60vw, 420px"
-                className="object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-[1.03]"
+                className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
               />
               {/* subtle dark overlay to keep the tag legible */}
               <div className="absolute inset-0 bg-cgpt-bg/35" />

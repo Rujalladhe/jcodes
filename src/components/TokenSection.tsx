@@ -22,6 +22,13 @@ const TRUSTED_BY = ["Xpheno", "Lumen", "Welspun", "Quantiphi"] as const;
 
 const CONTRACT_ADDRESS = "contact@incruiter.com";
 
+// Red HUD connector-beam frame around the heading — same flowing-red-light look as
+// the hero/solutions beams. Drawn in a 600×200 space (preserveAspectRatio="none"),
+// stretched to the heading box: a top bracket (left vertical + top rail) and a
+// bottom rail under the right half that angles up at its end.
+const HEAD_BEAM_TOP = "M 16 150 L 16 26 L 584 26";
+const HEAD_BEAM_BOTTOM = "M 280 174 L 560 174 L 592 146";
+
 export function TokenSection() {
   const [copied, setCopied] = useState(false);
 
@@ -40,10 +47,28 @@ export function TokenSection() {
       id="token"
       className="relative mx-auto max-w-[1320px] overflow-hidden bg-cgpt-bg px-5 py-24 lg:px-8"
     >
-      {/* Big heading */}
-      <h2 className="font-sans text-[clamp(3rem,8vw,90px)] leading-[0.95] text-cgpt-fg">
-        IncBot AI
-      </h2>
+      {/* Big heading, wrapped in a red HUD connector-beam frame */}
+      <div className="relative inline-block">
+        <DoubleDotsIcon className="mb-3 text-cgpt-violet-light" />
+        <div className="relative px-6 py-4">
+          <svg
+            aria-hidden
+            viewBox="0 0 600 200"
+            preserveAspectRatio="none"
+            className="pointer-events-none absolute inset-0 h-full w-full"
+          >
+            {/* faint static red rails */}
+            <path className="cgpt-beam-base" d={HEAD_BEAM_TOP} />
+            <path className="cgpt-beam-base" d={HEAD_BEAM_BOTTOM} />
+            {/* flowing red light pulse */}
+            <path className="cgpt-beam" pathLength={100} d={HEAD_BEAM_TOP} />
+            <path className="cgpt-beam" pathLength={100} d={HEAD_BEAM_BOTTOM} />
+          </svg>
+          <h2 className="relative font-sans text-[clamp(3rem,8vw,90px)] leading-[0.95] text-cgpt-fg">
+            IncBot AI
+          </h2>
+        </div>
+      </div>
 
       {/* 3-zone layout */}
       <div className="relative mt-10 grid grid-cols-1 items-center gap-12 lg:grid-cols-3 lg:gap-6">
@@ -61,17 +86,17 @@ export function TokenSection() {
           {/* soft radial glow */}
           <div
             aria-hidden
-            className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-30 blur-3xl"
+            className="pointer-events-none absolute left-1/2 top-1/2 h-135 w-135 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-30 blur-3xl"
             style={{ background: "var(--cgpt-gradient)" }}
           />
           <div className="relative animate-cgpt-float">
             <Image
               src="/images/6f91bfe4-c3c1-42f8-9625-1882fe6388c0.png"
               alt="InCruiter IncBot AI engine"
-              width={520}
-              height={520}
+              width={680}
+              height={680}
               priority
-              className="h-auto w-[300px] sm:w-[420px] lg:w-[520px]"
+              className="h-auto w-100 sm:w-130 lg:w-200"
             />
           </div>
         </div>

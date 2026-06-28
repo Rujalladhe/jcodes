@@ -93,7 +93,7 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
           alt={post.title}
           fill
           sizes="(max-width: 768px) 82vw, (max-width: 1024px) 42vw, 380px"
-          className="object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-[1.03]"
+          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-cgpt-bg/80 via-cgpt-bg/20 to-transparent" />
         <CornerBrackets />
