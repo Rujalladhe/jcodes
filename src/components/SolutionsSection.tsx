@@ -201,7 +201,7 @@ function SolutionPanel({ solution }: { solution: Solution }) {
               key={feature}
               className={cn(
                 "flex items-center justify-end gap-2 border-b border-cgpt-line/60 pb-2",
-                "font-mono text-[12px] uppercase tracking-wide text-cgpt-muted"
+                "font-mono text-[12px] uppercase tracking-wide text-white"
               )}
             >
               <span className="text-cgpt-violet-light">&#9666;</span>
