@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
 import {
   ChevronDownIcon,
@@ -13,54 +12,55 @@ import type { NavItem } from "@/types";
 
 const NAV: NavItem[] = [
   {
+    label: "Products",
+    items: [
+      { label: "IncServe — Interview as a Service", href: "#solutions" },
+      { label: "IncBot — AI Interview Software", href: "#solutions" },
+      { label: "IncScreen — AI Recruiter", href: "#solutions" },
+      { label: "IncVid — Video Interview", href: "#solutions" },
+      { label: "IncFeed — Interview Scheduling", href: "#solutions" },
+      { label: "IncProctor — Online Proctoring", href: "#solutions" },
+    ],
+  },
+  {
     label: "Solutions",
     items: [
-      { label: "AI Chatbot", href: "#solutions" },
-      { label: "Smart Contract Generator", href: "#solutions" },
-      { label: "Smart Contract Auditor", href: "#solutions" },
-      { label: "AI NFT Generator", href: "#solutions" },
-      { label: "AI Trading Assistant", href: "#solutions" },
-      { label: "CryptoGuard", href: "#solutions" },
+      { label: "Interview as a Service", href: "#solutions" },
+      { label: "AI Interview Software", href: "#token" },
+      { label: "Platform Features", href: "#product" },
+      { label: "How It Works", href: "#roadmap" },
     ],
   },
   {
-    label: "Developers",
+    label: "Company",
     items: [
-      { label: "API & SDK Access", href: "#solutions" },
-      { label: "Documentation", href: "#" },
-      { label: "AIVM Blockchain", href: "#ecosystem" },
+      { label: "About InCruiter", href: "#team" },
+      { label: "Our Impact", href: "#pricing" },
+      { label: "Case Studies", href: "#case-studies" },
     ],
   },
   {
-    label: "About AI Hub",
-    items: [
-      { label: "Crypto AI Hub", href: "#" },
-      { label: "ChainGPT Labs", href: "#" },
-      { label: "Our Story", href: "#team" },
-    ],
-  },
-  {
-    label: "Learn",
+    label: "Resources",
     items: [
       { label: "Blog", href: "#blog" },
-      { label: "Documentation", href: "#" },
+      { label: "FAQ", href: "#faq" },
       { label: "Help Center", href: "#" },
     ],
   },
   {
-    label: "$CGPT",
+    label: "Integrations",
     items: [
-      { label: "Tokenomics", href: "#token" },
-      { label: "Staking & Farming", href: "#token" },
-      { label: "DAO Governance", href: "#token" },
+      { label: "Greenhouse", href: "#token" },
+      { label: "Workday", href: "#token" },
+      { label: "Ashby & more", href: "#token" },
     ],
   },
   {
-    label: "Community",
+    label: "Contact",
     items: [
-      { label: "Telegram", href: "#join" },
-      { label: "Discord", href: "#join" },
-      { label: "Twitter", href: "#join" },
+      { label: "Book a Demo", href: "#join" },
+      { label: "LinkedIn", href: "#join" },
+      { label: "Instagram", href: "#join" },
     ],
   },
 ];
@@ -86,20 +86,16 @@ export function Header() {
         )}
       >
         {/* Logo */}
-        <a href="#" className="flex shrink-0 items-center" aria-label="ChainGPT home">
-          <Image
-            src="/images/chaingpt-logo-neon.svg"
-            alt="ChainGPT"
-            width={156}
-            height={34}
-            priority
-          />
+        <a href="#" className="flex shrink-0 items-center" aria-label="InCruiter home">
+          <span className="font-sans text-[22px] font-semibold tracking-tight text-cgpt-fg">
+            In<span className="cgpt-gradient-text">Cruiter</span>
+          </span>
         </a>
 
-        {/* Ecosystem pill */}
+        {/* Products pill */}
         <button className="cgpt-glass hidden items-center gap-2 rounded-md border border-cgpt-line px-4 py-2.5 font-mono text-[11px] uppercase tracking-wider text-cgpt-fg transition-colors hover:border-white/30 xl:flex">
           <EcosystemGridIcon className="text-cgpt-fg" />
-          Our Ecosystem
+          Our Products
         </button>
 
         {/* Links */}
@@ -133,13 +129,13 @@ export function Header() {
           {/* Light / dark theme toggle */}
           <ThemeToggle />
 
-          {/* Launch DApp */}
+          {/* Book a Demo */}
           <a
-            href="#"
+            href="#join"
             className="relative hidden items-center gap-2 rounded-md px-5 py-3 font-mono text-[12px] uppercase tracking-wider text-cgpt-fg cgpt-gradient-border cgpt-glass transition-transform hover:scale-[1.02] sm:flex"
           >
             <DoubleDotsIcon className="text-cgpt-fg" />
-            Launch DApp
+            Book a Demo
           </a>
 
           {/* Mobile hamburger */}
@@ -173,12 +169,12 @@ export function Header() {
           </ul>
           <div className="px-5 pb-5">
             <a
-              href="#"
+              href="#join"
               onClick={() => setMobileOpen(false)}
               className="flex items-center justify-center gap-2 rounded-md px-5 py-3 font-mono text-[12px] uppercase tracking-wider text-cgpt-fg cgpt-gradient-border cgpt-glass"
             >
               <DoubleDotsIcon className="text-cgpt-fg" />
-              Launch DApp
+              Book a Demo
             </a>
           </div>
         </div>

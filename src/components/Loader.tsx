@@ -3,9 +3,10 @@
 import { useEffect, useState } from "react";
 
 /**
- * Full-screen intro loader matching ChainGPT's boot screen:
- * dark backdrop, corner brackets, a gradient-framed robot face, and "LOADING" labels.
- * Fades out after mount (the real site plays a Lottie; we approximate timing).
+ * Full-screen intro loader for the InCruiter landing page:
+ * dark backdrop, corner brackets, a gradient-framed "iC" monogram resting over the
+ * crosshair, the InCruiter wordmark + tagline, and a pulsing loading indicator.
+ * Fades out after mount to reveal the hero.
  */
 export function Loader() {
   const [done, setDone] = useState(false);
@@ -45,18 +46,43 @@ export function Loader() {
         <span key={c} className={`absolute h-6 w-6 rounded-[3px] border-cgpt-line ${c}`} />
       ))}
 
-      {/* robot face */}
-      <div className="relative flex h-40 w-40 items-center justify-center rounded-[28px] cgpt-gradient-border">
-        <div className="flex h-[72%] w-[72%] items-center justify-center gap-3 rounded-[18px] bg-cgpt-card">
-          <span className="h-3 w-3 rounded-full bg-cgpt-fg" />
-          <span className="h-3 w-3 rounded-full bg-cgpt-fg" />
+      {/* Branded resting block — InCruiter monogram, wordmark + tagline */}
+      <div className="relative flex flex-col items-center gap-6">
+        {/* iC monogram tile */}
+        <div className="relative flex h-28 w-28 items-center justify-center rounded-[24px] cgpt-gradient-border">
+          <div className="flex h-[78%] w-[78%] items-center justify-center rounded-[16px] bg-cgpt-card">
+            <span className="cgpt-gradient-text font-sans text-4xl font-semibold tracking-tight">
+              iC
+            </span>
+          </div>
+        </div>
+
+        {/* wordmark + tagline */}
+        <div className="flex flex-col items-center gap-2">
+          <span className="font-sans text-2xl font-semibold tracking-tight text-cgpt-fg">
+            In<span className="cgpt-gradient-text">Cruiter</span>
+          </span>
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-cgpt-muted">
+            Augmented AI for Precision Hiring
+          </span>
+        </div>
+
+        {/* pulsing loading dots */}
+        <div className="mt-1 flex items-center gap-2">
+          {[0, 1, 2].map((i) => (
+            <span
+              key={i}
+              className="h-1.5 w-1.5 animate-pulse rounded-full bg-cgpt-fg"
+              style={{ animationDelay: `${i * 0.2}s` }}
+            />
+          ))}
         </div>
       </div>
 
       <span className="font-mono absolute left-[8%] top-1/2 -translate-y-1/2 text-xs uppercase tracking-[0.2em] text-cgpt-fg">
-        Loading
+        InCruiter
       </span>
-      <span className="font-mono absolute right-[8%] top-1/2 -translate-y-1/2 text-xs uppercase tracking-[0.2em] text-cgpt-fg">
+      <span className="font-mono absolute right-[8%] top-1/2 -translate-y-1/2 text-xs uppercase tracking-[0.2em] text-cgpt-muted">
         Loading
       </span>
     </div>

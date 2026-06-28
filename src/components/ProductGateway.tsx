@@ -11,15 +11,15 @@ interface Capability {
 }
 
 const CAPABILITIES: Capability[] = [
-  { no: "01", title: "SMART CONTRACTS DEVELOPMENT", tag: "BUILD" },
-  { no: "02", title: "ADVANCED AI TRADING", tag: "TRADE" },
-  { no: "03", title: "KNOWLEDGE & GUIDANCE", tag: "LEARN" },
-  { no: "04", title: "RISK MANAGEMENT & AML", tag: "SECURE" },
-  { no: "05", title: "BLOCKCHAIN & MARKET ANALYTICS", tag: "ANALYZE" },
-  { no: "06", title: "CODE AUDITOR", tag: "AUDIT" },
-  { no: "07", title: "CHART & TECHNICAL ANALYSIS", tag: "CHART" },
-  { no: "08", title: "CODE EXPLAINER", tag: "EXPLAIN" },
-  { no: "09", title: "SOURCE OF NEWS", tag: "NEWS" },
+  { no: "01", title: "INTERVIEW AS A SERVICE", tag: "HIRE" },
+  { no: "02", title: "AI INTERVIEW SOFTWARE", tag: "AUTOMATE" },
+  { no: "03", title: "CONVERSATIONAL AI RECRUITER", tag: "SCREEN" },
+  { no: "04", title: "VIDEO INTERVIEW PLATFORM", tag: "INTERVIEW" },
+  { no: "05", title: "JD TO CV MATCHING", tag: "MATCH" },
+  { no: "06", title: "AI PROCTORING", tag: "SECURE" },
+  { no: "07", title: "INTERVIEW SCHEDULING", tag: "SCHEDULE" },
+  { no: "08", title: "DEEPFAKE DETECTION", tag: "DETECT" },
+  { no: "09", title: "WHITE-LABELLED REPORTS", tag: "BRAND" },
 ];
 
 const N = CAPABILITIES.length;
@@ -86,14 +86,14 @@ export function ProductGateway() {
           <h2 className="font-sans text-[clamp(2.5rem,7vw,72px)] leading-[1.0]">
             Your Gateway
             <br />
-            To <span className="cgpt-gradient-text">Web3 AI</span>
+            To <span className="cgpt-gradient-text">Smarter Hiring</span>
           </h2>
           {/* subtitle framed by red HUD corner brackets */}
           <div className="relative max-w-xs px-7 py-5">
             <span className="pointer-events-none absolute left-0 top-0 h-6 w-9 border-l-2 border-t-2 border-cgpt-violet" />
             <span className="pointer-events-none absolute bottom-0 right-0 h-6 w-9 border-b-2 border-r-2 border-cgpt-violet" />
             <p className="text-base text-cgpt-fg/70 lg:text-right">
-              For individuals, developers, and businesses.
+              For startups, SMEs, enterprises, and IT staffing teams.
             </p>
           </div>
         </div>
@@ -127,12 +127,12 @@ export function ProductGateway() {
                   System Online
                 </span>
                 <h3 className="mt-5 font-sans text-[40px] leading-[1.03] text-white">
-                  One Bot.
+                  One Platform.
                   <br />
                   Nine Modules.
                 </h3>
                 <p className="font-mono mt-4 max-w-[240px] text-[11px] uppercase leading-relaxed tracking-[0.12em] text-cgpt-muted/80">
-                  Every ChainGPT capability, spoken from one unified AI engine.
+                  Every InCruiter capability, powered by one unified AI engine.
                 </p>
               </div>
 
@@ -150,7 +150,7 @@ export function ProductGateway() {
 
               {/* status footer */}
               <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-cgpt-fg/35">
-                CGPT // Product_Matrix
+                INC // Product_Matrix
               </span>
             </div>
           </div>
@@ -173,7 +173,7 @@ export function ProductGateway() {
               {/* console status header */}
               <div className="mb-1 flex items-center justify-between border-b border-cgpt-line pb-3">
                 <span className="cgpt-cursor font-mono text-[11px] uppercase tracking-[0.28em] text-cgpt-fg/70">
-                  ChainGPT // Speaking
+                  InCruiter // Speaking
                 </span>
                 <span className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-cgpt-muted">
                   <span

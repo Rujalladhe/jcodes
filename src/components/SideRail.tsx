@@ -5,17 +5,16 @@ import { cn } from "@/lib/utils";
 
 const SECTIONS: { id: string; label: string }[] = [
   { id: "intro", label: "INTRO" },
-  { id: "product", label: "PRODUCT" },
-  { id: "reviews", label: "REVIEWS" },
-  { id: "solutions", label: "SOLUTIONS" },
+  { id: "product", label: "PLATFORM" },
+  { id: "reviews", label: "AWARDS" },
+  { id: "solutions", label: "PRODUCTS" },
   { id: "case-studies", label: "CASE STUDIES" },
-  { id: "ecosystem", label: "ECOSYSTEM" },
-  { id: "pricing", label: "PRICING" },
-  { id: "token", label: "OUR TOKEN" },
-  { id: "team", label: "TEAM" },
-  { id: "roadmap", label: "ROADMAP" },
+  { id: "pricing", label: "IMPACT" },
+  { id: "token", label: "INCBOT" },
+  { id: "team", label: "EXPERTS" },
+  { id: "roadmap", label: "HOW IT WORKS" },
   { id: "faq", label: "F.A.Q" },
-  { id: "join", label: "JOIN" },
+  { id: "join", label: "CONTACT" },
 ];
 
 export function SideRail() {

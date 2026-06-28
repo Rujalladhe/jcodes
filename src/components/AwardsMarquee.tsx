@@ -1,15 +1,14 @@
 import type { ComponentType } from "react";
 import { cn } from "@/lib/utils";
 import {
-  AwsLogo,
-  AwwwardsLogo,
-  BeInCryptoLogo,
-  BinanceLogo,
-  BnbChainLogo,
-  FwaLogo,
+  CapterraLogo,
+  G2Logo,
+  GdprLogo,
   GoogleLogo,
-  NvidiaLogo,
+  IsoLogo,
+  MicrosoftLogo,
   ProductHuntLogo,
+  Soc2Logo,
 } from "@/components/brand-logos";
 
 interface Award {
@@ -19,17 +18,16 @@ interface Award {
 }
 
 const AWARDS: Award[] = [
-  { title: "$100,000 GRANT", subtitle: "FROM NVIDIA", Logo: NvidiaLogo },
-  { title: "$1M IN AWS CREDITS", subtitle: "FROM AMAZON WEB SERVICES", Logo: AwsLogo },
-  { title: "$350,000 GRANT", subtitle: "FROM GOOGLE", Logo: GoogleLogo },
-  { title: "GAS GRANT OF THE YEAR", subtitle: "FROM BNB CHAIN", Logo: BnbChainLogo },
-  { title: "ECOSYSTEM CATALYST AWARD", subtitle: "FROM BNB CHAIN", Logo: BnbChainLogo },
-  { title: "SITE OF THE DAY", subtitle: "SEPTEMBER 13, 2023", Logo: AwwwardsLogo },
-  { title: "FWA OF THE DAY", subtitle: "SEPTEMBER 19, 2023", Logo: FwaLogo },
-  { title: "BEINCRYPTO EXCELLENCE", subtitle: "2024 BEST AI PROJECT", Logo: BeInCryptoLogo },
-  { title: "SITE OF THE DAY", subtitle: "NOVEMBER 30, 2024", Logo: AwwwardsLogo },
-  { title: "#1 WEB3 APP", subtitle: "BY PRODUCTHUNT", Logo: ProductHuntLogo },
-  { title: "INNOVATION EXCELLENCE", subtitle: "BY BINANCE", Logo: BinanceLogo },
+  { title: "5 / 5 RATING", subtitle: "253 REVIEWS", Logo: ProductHuntLogo },
+  { title: "4.6 / 5 RATING", subtitle: "131 REVIEWS", Logo: G2Logo },
+  { title: "4.9 / 5 RATING", subtitle: "60 REVIEWS", Logo: CapterraLogo },
+  { title: "HIGH PERFORMER", subtitle: "ASIA PACIFIC", Logo: G2Logo },
+  { title: "ENTERPRISE LEADER", subtitle: "G2 — 2026", Logo: G2Logo },
+  { title: "SOC 2 CERTIFIED", subtitle: "DATA SECURITY", Logo: Soc2Logo },
+  { title: "ISO 27001", subtitle: "INFORMATION SECURITY", Logo: IsoLogo },
+  { title: "GDPR COMPLIANT", subtitle: "DATA PRIVACY", Logo: GdprLogo },
+  { title: "GOOGLE FOR STARTUPS", subtitle: "PROGRAM MEMBER", Logo: GoogleLogo },
+  { title: "MICROSOFT FOR STARTUPS", subtitle: "PROGRAM MEMBER", Logo: MicrosoftLogo },
 ];
 
 /* Thin L-shaped corner brackets framing the logo plate */

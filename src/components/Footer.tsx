@@ -13,57 +13,47 @@ interface FooterColumn {
 
 const COLUMNS: FooterColumn[] = [
   {
-    title: "AI Solutions",
+    title: "Products",
     links: [
-      { label: "ChainGPT Chat Bot", href: "#" },
-      { label: "ChainGPT AI Agents", href: "#" },
-      { label: "AI NFT Generator", href: "#" },
-      { label: "ChainGPT on Telegram", href: "#" },
-      { label: "ChainGPT on Discord", href: "#" },
-      { label: "Smart Contract Generator", href: "#" },
-      { label: "Smart Contract Auditor", href: "#" },
-      { label: "AI Generated News", href: "#" },
-      { label: "AI Trading Assistant", href: "#" },
-      { label: "API/SDK Access", href: "#" },
-      { label: "CryptoGuard", href: "#" },
+      { label: "IncServe — Interview as a Service", href: "#solutions" },
+      { label: "IncBot — AI Interview Software", href: "#solutions" },
+      { label: "IncScreen — AI Recruiter", href: "#solutions" },
+      { label: "IncVid — Video Interview", href: "#solutions" },
+      { label: "IncFeed — Interview Scheduling", href: "#solutions" },
+      { label: "IncProctor — Online Proctoring", href: "#solutions" },
     ],
   },
   {
-    title: "Quick Links",
+    title: "Solutions",
     links: [
-      { label: "ChainGPT Pad", href: "#" },
-      { label: "ChainGPT Blog", href: "#" },
-      { label: "Documentation", href: "#" },
-      { label: "$CGPT Staking", href: "#" },
-      { label: "DAO Governance", href: "#" },
-      { label: "Pricing Page", href: "#" },
-      { label: "Help Center", href: "#" },
-      { label: "Brand Kit", href: "#" },
-      { label: "Careers", href: "#" },
+      { label: "Interview as a Service", href: "#solutions" },
+      { label: "AI Interview Software", href: "#token" },
+      { label: "Video Interview Platform", href: "#solutions" },
+      { label: "Online Proctoring", href: "#solutions" },
+      { label: "Deepfake Detection", href: "#token" },
+      { label: "Platform Features", href: "#product" },
+      { label: "Integrations", href: "#token" },
     ],
   },
   {
-    title: "Legal",
+    title: "Company",
     links: [
-      { label: "Official verification", href: "#" },
-      { label: "Privacy Policy", href: "#" },
-      { label: "Terms of Service", href: "#" },
-      { label: "Cookies Policy", href: "#" },
-      { label: "Eligibility Policy", href: "#" },
+      { label: "About InCruiter", href: "#team" },
+      { label: "Our Impact", href: "#pricing" },
+      { label: "Case Studies", href: "#case-studies" },
+      { label: "Blog", href: "#blog" },
+      { label: "How It Works", href: "#roadmap" },
+      { label: "FAQ", href: "#faq" },
+      { label: "Book a Demo", href: "#join" },
     ],
   },
 ];
 
 const SOCIALS: FooterLink[] = [
-  { label: "Telegram", href: "#" },
-  { label: "Discord", href: "#" },
-  { label: "Youtube", href: "#" },
-  { label: "Medium", href: "#" },
-  { label: "Linkedin", href: "#" },
-  { label: "Facebook", href: "#" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/incruiter" },
+  { label: "Instagram", href: "https://www.instagram.com/incruiter_" },
+  { label: "Facebook", href: "https://www.facebook.com/incruiterinterviews" },
   { label: "Twitter", href: "#" },
-  { label: "Instagram", href: "#" },
-  { label: "Github", href: "#" },
 ];
 
 export function Footer() {
@@ -143,10 +133,10 @@ export function Footer() {
         <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-cgpt-line pt-6 sm:flex-row sm:items-center">
           <div className="flex flex-wrap items-center gap-2">
             <span className="font-mono text-[12px] text-cgpt-muted">
-              &copy; 2025
+              &copy; 2026
             </span>
             <span className="font-mono text-[12px] uppercase text-cgpt-muted">
-              All rights reserved by chaingpt.org.
+              InCruiter India Private Limited. All rights reserved.
             </span>
           </div>
           <span className={cn("font-mono text-[18px] leading-none text-cgpt-muted")}>

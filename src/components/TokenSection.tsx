@@ -6,21 +6,21 @@ import { cn } from "@/lib/utils";
 import { DoubleDotsIcon, ArrowDiagonalIcon } from "@/components/icons";
 
 const TOKEN_FEATURES = [
-  "CHAINGPT AI ACCESS",
-  "API & SDK ACCESS",
-  "DAO & VOTING",
-  "STAKING & FARMING",
-  "ACCESS TO IDOS",
-  "LIQUIDITY PROVIDING",
+  "SPEECH-TO-TEXT (STT)",
+  "NATURAL LANGUAGE (NLP)",
+  "GENERATIVE AI",
+  "TEXT-TO-SPEECH (TTS)",
+  "ASR TRANSCRIPTION",
+  "DEEPFAKE DETECTION",
 ] as const;
 
-const AUDITORS = ["CERTIK", "HACKEN"] as const;
+const AUDITORS = ["SOC 2", "ISO 27001"] as const;
 
-const BUY_FROM = ["Binance", "PancakeSwap"] as const;
+const INTEGRATIONS = ["Greenhouse", "Workday"] as const;
 
-const LISTED_ON = ["Binance", "Bybit", "KuCoin", "Gate.io"] as const;
+const TRUSTED_BY = ["Xpheno", "Lumen", "Welspun", "Quantiphi"] as const;
 
-const CONTRACT_ADDRESS = "0x...f00f98";
+const CONTRACT_ADDRESS = "contact@incruiter.com";
 
 export function TokenSection() {
   const [copied, setCopied] = useState(false);
@@ -42,7 +42,7 @@ export function TokenSection() {
     >
       {/* Big heading */}
       <h2 className="font-sans text-[clamp(3rem,8vw,90px)] leading-[0.95] text-cgpt-fg">
-        $CGPT
+        IncBot AI
       </h2>
 
       {/* 3-zone layout */}
@@ -50,8 +50,9 @@ export function TokenSection() {
         {/* LEFT: paragraph */}
         <div className="order-2 lg:order-1">
           <p className="max-w-xs text-base leading-relaxed text-cgpt-fg/70">
-            The ChainGPT ecosystem is backed and powered by the $CGPT token.
-            Gain voting power in the DAO, access to premium AI tools, and more!
+            InCruiter&apos;s AI Interview engine is powered by Conversational AI.
+            Built on STT, NLP, GenAI &amp; TTS for human-like, unbiased interviews
+            in all major languages and local accents.
           </p>
         </div>
 
@@ -65,8 +66,8 @@ export function TokenSection() {
           />
           <div className="relative animate-cgpt-float">
             <Image
-              src="/images/token-coin.webp"
-              alt="$CGPT token coin"
+              src="/images/6f91bfe4-c3c1-42f8-9625-1882fe6388c0.png"
+              alt="InCruiter IncBot AI engine"
               width={520}
               height={520}
               priority
@@ -80,7 +81,7 @@ export function TokenSection() {
           <div className="flex items-center justify-end gap-2">
             <DoubleDotsIcon className="text-cgpt-muted" />
             <span className="font-mono text-[12px] uppercase tracking-wide text-cgpt-muted">
-              Features of the Token
+              Powered By
             </span>
           </div>
           <ul className="mt-5 space-y-3">
@@ -99,10 +100,10 @@ export function TokenSection() {
 
       {/* BOTTOM bar */}
       <div className="mt-16 grid grid-cols-1 border border-cgpt-line lg:grid-cols-3 lg:divide-x lg:divide-cgpt-line">
-        {/* AUDITED BY cell */}
+        {/* CERTIFIED BY cell */}
         <div className="flex flex-col gap-4 border-b border-cgpt-line p-6 lg:border-b-0">
           <span className="font-mono text-[12px] uppercase tracking-wide text-cgpt-muted">
-            Audited by
+            Certified by
           </span>
           <div className="flex items-center gap-5">
             {AUDITORS.map((name) => (
@@ -122,7 +123,7 @@ export function TokenSection() {
             <button
               type="button"
               onClick={handleCopy}
-              aria-label="Copy contract address"
+              aria-label="Copy contact email"
               className={cn(
                 "flex h-5 w-5 items-center justify-center rounded transition-colors hover:text-cgpt-fg",
                 copied ? "text-cgpt-teal" : "text-cgpt-muted"
@@ -133,13 +134,13 @@ export function TokenSection() {
           </div>
         </div>
 
-        {/* BUY FROM cell */}
+        {/* INTEGRATES WITH cell */}
         <div className="flex flex-col gap-4 border-b border-cgpt-line p-6 lg:border-b-0">
           <span className="font-mono text-[12px] uppercase tracking-wide text-cgpt-muted">
-            Buy from:
+            Integrates with:
           </span>
           <div className="flex flex-col gap-3">
-            {BUY_FROM.map((name) => (
+            {INTEGRATIONS.map((name) => (
               <a
                 key={name}
                 href="#"
@@ -148,7 +149,7 @@ export function TokenSection() {
                 <span className="flex items-center gap-2">
                   <span className="font-sans text-base">{name}</span>
                   <span className="rounded border border-cgpt-line px-2 py-0.5 font-mono text-[10px] uppercase tracking-wide text-cgpt-muted">
-                    Popular
+                    ATS
                   </span>
                 </span>
                 <ArrowDiagonalIcon className="text-cgpt-muted transition-colors group-hover:text-cgpt-fg" />
@@ -157,13 +158,13 @@ export function TokenSection() {
           </div>
         </div>
 
-        {/* LISTED ON cell */}
+        {/* TRUSTED BY cell */}
         <div className="flex flex-col gap-4 p-6">
           <span className="font-mono text-[12px] uppercase tracking-wide text-cgpt-muted">
-            Listed on:
+            Trusted by:
           </span>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-            {LISTED_ON.map((name) => (
+            {TRUSTED_BY.map((name) => (
               <span
                 key={name}
                 className="font-mono text-[12px] uppercase tracking-wide text-cgpt-fg/70"

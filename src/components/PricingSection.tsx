@@ -18,56 +18,44 @@ interface PricingCard {
 
 const CARDS: PricingCard[] = [
   {
-    title: "General Chatbot",
-    rows: [
-      { label: "Free usages daily", value: "50" },
-      { label: "Per usage afterwards", value: "0.5" },
-    ],
-  },
-  {
-    title: "Smart Contract Auditor",
-    rows: [
-      { label: "Free usages daily", value: "10" },
-      { label: "Per usage afterwards", value: "1" },
-    ],
-  },
-  {
-    title: "Smart Contract Generator",
-    rows: [
-      { label: "Free usages daily", value: "10" },
-      { label: "Per usage afterwards", value: "2" },
-    ],
-  },
-  {
-    title: "AI Trading Assistant",
-    rows: [
-      { label: "Free usages daily", value: "20" },
-      { label: "Per usage afterwards", value: "2" },
-    ],
-  },
-  {
-    title: "AI NFT Generator",
-    rows: [
-      { label: "Free images daily", value: "50" },
-      { label: "Using models (per image)", value: "1" },
-    ],
-  },
-  {
-    title: "Ask Crypto People",
-    rows: [
-      { label: "Free usages daily", value: "50" },
-      { label: "Per usage afterwards", value: "1" },
-    ],
-  },
-  {
-    title: "AI News Generator",
+    title: "Time-to-Hire",
     rows: [],
-    single: "Free Unlimited",
+    single: "75% Faster",
   },
   {
-    title: "CryptoGuard",
+    title: "Hiring Cost",
     rows: [],
-    single: "Free Unlimited",
+    single: "80% Saved",
+  },
+  {
+    title: "Candidate Experience",
+    rows: [],
+    single: "100% Positive",
+  },
+  {
+    title: "Expert Interviewers",
+    rows: [],
+    single: "4500+",
+  },
+  {
+    title: "Technologies Covered",
+    rows: [],
+    single: "250+",
+  },
+  {
+    title: "Global Clients",
+    rows: [],
+    single: "600+",
+  },
+  {
+    title: "Interview Turnaround",
+    rows: [],
+    single: "6 Hrs",
+  },
+  {
+    title: "Interview Support",
+    rows: [],
+    single: "24 x 7",
   },
 ];
 
@@ -83,12 +71,12 @@ export function PricingSection() {
           <div>
             <span className="font-mono flex items-center gap-2 text-[12px] uppercase tracking-[0.15em] text-cgpt-muted">
               <DoubleDotsIcon className="text-cgpt-muted" />
-              Pricing
+              Our Impact
             </span>
 
             <h2 className="font-sans relative mt-5 inline-block text-[clamp(2.5rem,6vw,64px)] leading-[1.02]">
               <span className="relative inline-block px-1">
-                Our Pricing
+                Our Impact
                 {/* gradient underline */}
                 <span
                   className="absolute -bottom-2 left-0 h-[3px] w-full rounded-full"
@@ -104,12 +92,12 @@ export function PricingSection() {
           {/* RIGHT: intro paragraph */}
           <div className="lg:pb-2">
             <p className="text-base leading-relaxed text-cgpt-fg/70">
-              ChainGPT offers a variety of solutions that allow retail users and
-              developers to access advanced Web3 AI tools. Pay-as-you-go with
-              CGPT credits.
+              InCruiter delivers measurable hiring outcomes for 600+ global
+              enterprises and 2000+ recruiters worldwide. Pay only for what you
+              use &mdash; no infrastructure investment.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-cgpt-fg/70">
-              Credits &mdash; &ldquo;CGPT Credits&rdquo;. 1 credit = $0.01
+              Start your trial &mdash; no credit card required.
             </p>
           </div>
         </div>
@@ -120,7 +108,7 @@ export function PricingSection() {
             type="button"
             role="switch"
             aria-checked={apiPricing}
-            aria-label="Switch to API pricing"
+            aria-label="Show before vs after outsourcing"
             onClick={() => setApiPricing((v) => !v)}
             className={cn(
               "relative inline-flex h-6 w-11 shrink-0 items-center rounded-full border border-cgpt-line transition-colors",
@@ -135,7 +123,7 @@ export function PricingSection() {
             />
           </button>
           <span className="font-mono text-[12px] uppercase tracking-[0.12em] text-cgpt-muted">
-            Switch to API pricing
+            Before vs after interview outsourcing
           </span>
         </div>
 
@@ -152,7 +140,7 @@ export function PricingSection() {
             href="#"
             className="cgpt-gradient-border cgpt-glass font-mono group inline-flex items-center gap-2 rounded-md px-6 py-3 text-[12px] uppercase tracking-[0.12em] text-cgpt-fg transition-colors hover:text-cgpt-fg-bright"
           >
-            View full pricing
+            Supercharge your hiring
             <ArrowDiagonalIcon className="text-cgpt-fg transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>
         </div>

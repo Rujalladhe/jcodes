@@ -15,14 +15,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ChainGPT - Unleash The Power of Blockchain AI",
+  title: "InCruiter - Augmented AI for Precision Hiring",
   description:
-    "ChainGPT is a leading AI infrastructure focused on developing AI-enhanced solutions for the Web3, Blockchain, and Cryptocurrency sectors.",
-  metadataBase: new URL("https://www.chaingpt.org"),
+    "InCruiter is an AI Interview & Interview-as-a-Service platform. Hire 4X faster and cut hiring costs by up to 80% with AI interviews and a network of 4500+ expert interviewers.",
+  metadataBase: new URL("https://www.incruiter.com"),
   openGraph: {
-    title: "ChainGPT - Unleash The Power of Blockchain AI",
+    title: "InCruiter - Interview as a Service Platform",
     description:
-      "Your personal expert in all crypto & blockchain related topics.",
+      "AI-powered interview solutions for smarter recruitment. Trusted by 600+ global enterprises.",
     type: "website",
   },
 };

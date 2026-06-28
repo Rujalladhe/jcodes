@@ -11,55 +11,55 @@ const POSTS: BlogPost[] = [
   {
     date: "JUNE 24, 2026",
     title:
-      "ChainGPT Upgrades to v2 Staking, and Rewards Stakers With a $50,000 CGPT-Gift Giveaway",
-    author: "CHRIS DUGGAN",
+      "What Is Interview as a Service? The Complete Guide to Outsourcing Interviews",
+    author: "INCRUITER TEAM",
   },
   {
     date: "MAY 27, 2026",
-    title: "How to Ship a Token Launch That Runs as One Stack",
-    author: "CHRIS DUGGAN",
+    title: "One-Way vs Two-Way AI Interviews: Which One Should You Use?",
+    author: "INCRUITER TEAM",
   },
   {
     date: "MAY 20, 2026",
-    title: "How to Ship Token Staking at TGE",
-    author: "CHRIS DUGGAN",
+    title: "How AI Interview Software Fast-Tracks Candidate Screening by 75%",
+    author: "INCRUITER TEAM",
   },
   {
     date: "MAY 7, 2026",
-    title: "Most Token Launch Problems Start Before the Sale",
-    author: "CHRIS DUGGAN",
+    title: "Deepfake Detection in Interviews: Stopping Hiring Fraud Before It Starts",
+    author: "INCRUITER TEAM",
   },
   {
     date: "APRIL 29, 2026",
-    title: "What Actually Breaks During a Token Sale",
-    author: "CHRIS DUGGAN",
+    title: "How to Cut Time-to-Hire From 42 Days to 6 Days",
+    author: "INCRUITER TEAM",
   },
   {
     date: "APRIL 21, 2026",
-    title: "How to Run a Token Sale on Your Own Website",
-    author: "CHRIS DUGGAN",
+    title: "InCruiter vs Zoom, Google Meet & MS Teams for Technical Interviews",
+    author: "INCRUITER TEAM",
   },
   {
     date: "APRIL 7, 2026",
-    title: "How Teams Actually Choose Launch Infrastructure in 2026",
-    author: "CHRIS DUGGAN",
+    title: "Building a Structured, Data-Driven Hiring Process That Scales",
+    author: "INCRUITER TEAM",
   },
   {
     date: "MARCH 24, 2026",
     title:
-      "White Label Crypto Launchpad: Features Projects and Participants Expect in 2026",
-    author: "CHRIS DUGGAN",
+      "How White-Labelled Interview Reports Strengthen Your Employer Brand",
+    author: "INCRUITER TEAM",
   },
   {
     date: "MARCH 12, 2026",
-    title: "Introducing Saleium: Public Token Sales on Your Own Domain",
-    author: "CHRIS DUGGAN",
+    title: "Eliminating Interview Fatigue With an External Expert Panel",
+    author: "INCRUITER TEAM",
   },
   {
     date: "MARCH 10, 2026",
     title:
-      "Token Staking Infrastructure: How Crypto Projects Launch Staking Without Building It In-House",
-    author: "CHRIS DUGGAN",
+      "How Conversational AI Removes Bias From the Interview Process",
+    author: "INCRUITER TEAM",
   },
 ];
 

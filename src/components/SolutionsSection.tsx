@@ -12,125 +12,89 @@ interface Solution {
 const SOLUTIONS: Solution[] = [
   {
     number: "01",
-    title: "ChainGPT Chatbot",
+    title: "IncServe — Interview as a Service",
     description:
-      "Reliable & Fast Source of Information. Ask ChainGPT AI any question related to Blockchain and Crypto. The AI can answer general and technical questions.",
+      "4500+ industry-specific expert interviewers conduct your tech and non-tech interviews. Share JDs and resumes, and our network evaluates candidates in around 6 hours — accurate, unbiased, and role-specific.",
     features: [
-      "WEB3 AI CHATBOT",
-      "ADVANCED CRYPTO LLM",
-      "ACCESS TO LIVE CRYPTO DATA",
-      "ACCESS TO ON-CHAIN DATA",
-      "UP TO DATE WEB3 INFO",
-      "MARKET ANALYSIS & RESEARCH",
+      "4500+ EXPERT INTERVIEWERS",
+      "250+ TECHNOLOGIES COVERED",
+      "6-HOUR TURNAROUND TIME",
+      "70% ROUND-2 CONVERSION",
+      "AI-POWERED PROCTORING",
+      "WHITE-LABELLED REPORTS",
     ],
-    ctas: ['ENTER THE "CRYPTO AI HUB"', "TRY ON TELEGRAM"],
+    ctas: ["EXPLORE INCSERVE", "BOOK A DEMO"],
   },
   {
     number: "02",
-    title: "AI News Auto-Model",
+    title: "IncBot — AI Interview Software",
     description:
-      "The future of Web3 news is here. Our advanced AI model scans the web and curates short articles on trending topics every 60 minutes, informing you effortlessly.",
-    features: ["AI GENERATED NEWS", "FULLY AUTOMATED", "SHORT FORM"],
-    ctas: ["READ AI-GENERATED NEWS"],
+      "A one-way and two-way video interview platform powered by Conversational AI. IncBot runs asynchronous interviews, generates dynamic follow-ups, and removes the need for human interviewers — interviews anytime, anywhere.",
+    features: [
+      "CONVERSATIONAL AI INTERVIEWS",
+      "DYNAMIC FOLLOW-UP QUESTIONS",
+      "4X FASTER, 100% AUTOMATED",
+      "DEEPFAKE & AI-VOICE DETECTION",
+      "ZERO DROPOUTS WITH REMINDERS",
+      "STRUCTURED FEEDBACK REPORTS",
+    ],
+    ctas: ["TRY INCBOT", "START FREE TRIAL"],
   },
   {
     number: "03",
-    title: "Smart-Contracts Generator & Auditor",
+    title: "IncScreen — Conversational AI Recruiter",
     description:
-      "Generate or audit a Solidity smart contract. Describe the contract you want to create or paste the code to be audited, and our AI will handle the rest.",
+      "An AI recruiter with conversational AI phone screening. IncScreen speeds up candidate screening with natural, human-like conversations so you can hire top talent effortlessly.",
     features: [
-      "AI SMART CONTRACTS",
-      "AI SOLIDITY AUDITOR",
-      "GAS OPTIMIZATION",
-      "DETECT EXPLOITS",
-      "DEPLOY CONTRACTS IN SECONDS",
+      "CONVERSATIONAL AI PHONE SCREENING",
+      "FASTER CANDIDATE SHORTLISTING",
+      "AUTOMATED CALL & FOLLOW-UP",
+      "INSTANT SCREENING SUMMARIES",
+      "AVAILABLE 24X7",
     ],
-    ctas: ["GENERATE & AUDIT SMART CONTRACTS"],
+    ctas: ["EXPLORE INCSCREEN"],
   },
   {
     number: "04",
-    title: "AI NFT Generator",
+    title: "IncVid — Video Interview Software",
     description:
-      "AI-Generated NFTs are non-fungible tokens created based on user prompts using AI-powered algorithms. Within 30-60 seconds, anyone can deploy their NFTs on the Blockchain.",
+      "Live video interviews on a cheat-proof platform with code collaboration, AI feedback, and built-in evaluations. A secure, interview-first replacement for MS Teams and Zoom.",
     features: [
-      "AI IMAGE GENERATION",
-      "EASY ON CHAIN MINTING",
-      "CREATE NFTS IN 30 SECS",
-      "20+ NETWORKS SUPPORTED",
-      "NFT EVENTS & GIVEAWAYS",
+      "CHEAT-PROOF LIVE INTERVIEWS",
+      "BUILT-IN CODE COMPILER",
+      "AI FEEDBACK & EVALUATIONS",
+      "RECORD & REVIEW",
+      "WHITE-LABELLING",
     ],
-    ctas: ["ENTER THE AI NFT GENERATOR"],
+    ctas: ["EXPLORE INCVID"],
   },
   {
     number: "05",
-    title: "AIVM Blockchain",
+    title: "IncFeed — Interview Scheduling Software",
     description:
-      "AIVM is a framework that integrates AI directly into blockchain networks. It will enable decentralized AI model execution, training, AI Agents infrastructure, and access to GPU resources.",
+      "Automate repetitive interview scheduling and manual follow-ups. IncFeed syncs candidate and panel calendars so coordination happens on its own — no more back-and-forth emails.",
     features: [
-      "DECENTRALIZED AI",
-      "ON-CHAIN LLM TRAINING",
-      "AI-AGENTS INFRASTRUCTURE",
-      "ON/OFF CHAIN INFERENCE",
-      "GPU MARKETPLACE",
-      "AI DATA MARKETPLACE",
+      "AUTO CALENDAR SYNC",
+      "PANEL & CANDIDATE MATCHING",
+      "AUTO REMINDERS & FOLLOW-UPS",
+      "CALENDAR INVITES",
+      "INBUILT ATS",
     ],
-    ctas: ["READ THE AIVM WHITEPAPER"],
+    ctas: ["EXPLORE INCFEED"],
   },
   {
     number: "06",
-    title: "AI Trading Assistant",
+    title: "IncProctor — Online Proctoring Software",
     description:
-      "We created an advanced AI model designed explicitly for Chart & Technical analysis to help experienced and new traders with strategies and implementation of technical analysis.",
+      "Secure remote assessments with AI Proctoring-as-a-Service for a cheat-proof hiring experience. Prevent tab switching, detect dual noise, and track eye movement in real time.",
     features: [
-      "CHART PATTERNS DETECTION",
-      "CHART PATTERNS PREDICTION",
-      "PRICE PREDICTION (BETA)",
-      "MARKET INDICATORS",
+      "AI PROCTORING-AS-A-SERVICE",
+      "TAB-SWITCH PREVENTION",
+      "DUAL-NOISE DETECTION",
+      "EYE-MOVEMENT TRACKING",
+      "RISK-SCORED REPORTS",
     ],
-    ctas: ["TRY NOW"],
-  },
-  {
-    number: "07",
-    title: "API & SDK",
-    description:
-      "Developers and businesses can integrate ChainGPT AI via its API & SDK access. They can integrate a specific function or build a new application with our AI model, saving time, money, and resources.",
-    features: [
-      "API & SDK ACCESS",
-      "AI NFT GENERATOR",
-      "AI TECHNICAL ANALYSIS",
-      "AI POWERED NEWS FEED",
-      "WEB3 AI CHATBOT & LLM",
-      "SOLIDITY GENERATOR & AUDITOR LLM",
-    ],
-    ctas: ["ENTER API DASHBOARD"],
-  },
-  {
-    number: "08",
-    title: "ChainGPT Pad & DegenPad",
-    description:
-      "The future of Web3 AI starts here. ChainGPT Pad & DegenPad offers the $CGPT token stakers access to leading Web3 & AI projects in early stages (pre-market).",
-    features: [
-      "FAIR TIER SYSTEM",
-      "HANDPICKED PROJECTS",
-      "FLEXIBLE REFUND POLICY",
-      "CHAINGPT LABS INCUBATIONS",
-      "FREE TOKEN GIVEAWAYS",
-    ],
-    ctas: ["ENTER CHAINGPT PAD", "ENTER DEGENPAD"],
-  },
-  {
-    number: "09",
-    title: "CryptoGuard®",
-    description:
-      "Elevate Web3 security with an AI-powered security extension that offers collaborative anti-fraud, phishing site blocker, and real-time scans. Stay protected, understand code, and transact with ease.",
-    features: [
-      "YOUR WEB3 ANTI-VIRUS",
-      "INCREASE SECURITY WITH AI",
-      "BLOCK PHISHING SITES",
-      "BLOCK MALWARE SMART-CONTRACTS",
-      "RISK-SCORE FOR CONTRACTS",
-    ],
-    ctas: ["EXPLORE NOW"],
+    ctas: ["EXPLORE INCPROCTOR"],
   },
 ];
 
@@ -230,7 +194,7 @@ export function SolutionsSection() {
             <span className="pointer-events-none absolute bottom-0 left-0 h-4 w-4 rounded-bl-[3px] border-b border-l border-white/40" />
             <span className="pointer-events-none absolute bottom-0 right-0 h-4 w-4 rounded-br-[3px] border-b border-r border-white/40" />
             <h2 className="font-sans text-[clamp(2.5rem,6vw,64px)] leading-none">
-              Our Solutions
+              Our Products
             </h2>
             <span
               className="absolute -bottom-px left-6 right-6 h-[2px] rounded-full"

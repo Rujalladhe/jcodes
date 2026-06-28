@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils";
 import {
   DoubleDotsIcon,
   ArrowDiagonalIcon,
-  TelegramIcon,
-  DiscordIcon,
+  LinkedinIcon,
+  InstagramIcon,
   TwitterIcon,
 } from "@/components/icons";
 
@@ -18,44 +18,44 @@ interface Review {
 
 const REVIEWS: Review[] = [
   {
-    name: "Alibaba Cloud",
-    handle: "@alibaba_cloud",
-    body: "Proud to collaborate with @Chain_GPT to advance AI development with powerful infrastructure and open innovation. Together, we're open-sourcing ChainGPT's Solidity LLM for broader developer access.",
+    name: "Product Hunt",
+    handle: "★ 5 / 5 · 253 reviews",
+    body: "A genuinely impressive take on AI interviews. The conversational follow-ups feel human, and the feedback reports are detailed enough to make real hiring decisions.",
   },
   {
-    name: "BNB Chain",
-    handle: "@BNBCHAIN",
-    body: "Amazing progress from @Chain_GPT! Let's keep building the strongest platform for decentralized A.I on BNB Chain!",
+    name: "G2 Review",
+    handle: "★ 4.6 / 5 · Verified",
+    body: "Interview as a Service has been a game-changer for our high-volume hiring. Expert interviewers, 6-hour turnaround, and structured reports — our time-to-hire dropped dramatically.",
   },
   {
-    name: "CertiK Security Leaderboard",
-    handle: "@CertiKCommunity",
-    body: "Proud to see @Chain_GPT at a stellar #47 on CertiK's Skynet rankings. Their commitment to robust security showcases their dedication to a safer Web3 ecosystem.",
+    name: "Capterra Review",
+    handle: "★ 4.9 / 5 · Verified",
+    body: "We replaced our generic video tool with IncVid. The cheat-proof proctoring and built-in code compiler make technical rounds so much more reliable.",
   },
   {
-    name: "Chainlink",
-    handle: "@chainlink",
-    body: "@Chain_GPT has integrated #Chainlink CCIP across @Ethereum and @0xPolygon to help unlock its cross-chain AI Hub.",
+    name: "Talent Acquisition Lead",
+    handle: "Enterprise · IT Services",
+    body: "Outsourcing first-round interviews to InCruiter's panel eliminated interview fatigue for our engineers. We hire 4X faster without expanding the team.",
   },
   {
-    name: "Polygon (Labs)",
-    handle: "@0xPolygonLabs",
-    body: "ChainGPT is unlocking cross-chain functionality with @0xPolygon, after its recent integration with Chainlink CCIP. Meaning seamless connectivity and enhanced experiences within web3 AI.",
+    name: "Head of HR",
+    handle: "Fintech Scaleup",
+    body: "The white-labelled reports and branded invites keep our candidate experience on-brand. Deepfake detection gives us real peace of mind on remote interviews.",
   },
   {
-    name: "Tron DAO",
-    handle: "@trondao",
-    body: "This collaboration with @Chain_GPT is a game-changer for the #TRON community! Together, we usher in a new era of AI accessibility and flexibility on the TRON network.",
+    name: "Recruitment Manager",
+    handle: "IT Staffing Firm",
+    body: "IncBot runs asynchronous interviews around the clock. Zero scheduling overhead, near-zero dropouts thanks to the reminders, and consistent, unbiased scoring.",
   },
 ];
 
 const PRESS_LOGOS: string[] = [
-  "Crypto News",
-  "Finbold",
-  "Yahoo Finance",
-  "Kriptoskop",
-  "BeInCrypto",
-  "Cointelegraph",
+  "YourStory",
+  "People Matters",
+  "HR Katha",
+  "Times of India",
+  "Business World",
+  "The Economic Times",
 ];
 
 interface CommunityCTA {
@@ -68,24 +68,24 @@ interface CommunityCTA {
 
 const COMMUNITY_CTAS: CommunityCTA[] = [
   {
-    eyebrow: "JOIN OUR",
-    title: "Telegram",
-    stat: "195K+",
-    statLabel: "MEMBERS",
-    Icon: TelegramIcon,
+    eyebrow: "CONNECT ON",
+    title: "LinkedIn",
+    stat: "600+",
+    statLabel: "GLOBAL CLIENTS",
+    Icon: LinkedinIcon,
   },
   {
-    eyebrow: "HOP INTO",
-    title: "Discord",
-    stat: "45K+",
-    statLabel: "MEMBERS",
-    Icon: DiscordIcon,
+    eyebrow: "FOLLOW ON",
+    title: "Instagram",
+    stat: "2000+",
+    statLabel: "RECRUITERS",
+    Icon: InstagramIcon,
   },
   {
-    eyebrow: "FOLLOW OUR",
-    title: "Twitter",
-    stat: "1M+",
-    statLabel: "FOLLOWERS",
+    eyebrow: "FOLLOW ON",
+    title: "Twitter / X",
+    stat: "4500+",
+    statLabel: "INTERVIEWERS",
     Icon: TwitterIcon,
   },
 ];
@@ -144,7 +144,7 @@ export function JoinSection() {
         JOIN THE
         <br />
         <span className="cgpt-gradient-text">
-          <span className="text-[1.25em]">AI</span> Revolution
+          <span className="text-[1.25em]">AI</span> Hiring Revolution
         </span>
       </h2>
 
@@ -235,7 +235,7 @@ export function JoinSection() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Subscribe to be in touch*"
+                placeholder="Straight from our desk, to your Inbox*"
                 className="w-full bg-transparent text-[15px] text-cgpt-fg placeholder:text-cgpt-muted focus:outline-none"
               />
               <button
@@ -250,7 +250,7 @@ export function JoinSection() {
               </button>
             </div>
             <p className="font-mono text-[12px] text-cgpt-muted">
-              *Only valuable resources.
+              *No credit card required. Start your trial anytime.
             </p>
           </form>
         </div>

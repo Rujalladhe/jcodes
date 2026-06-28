@@ -9,7 +9,7 @@ import {
   ArrowRightIcon,
 } from "@/components/icons";
 
-type Category = "SOFTWARE" | "AI" | "PAD" | "AIVM" | "LABS";
+type Category = "TECH" | "NONTECH" | "LEADERSHIP" | "DATA" | "PRODUCT";
 
 interface Member {
   name: string;
@@ -18,26 +18,22 @@ interface Member {
 }
 
 const MEMBERS: Member[] = [
-  { name: "ILAN RAKHMANOV", role: "FOUNDER & CEO (SOFTWARE)", category: "SOFTWARE" },
-  { name: "GINTARE KAIRYTE", role: "CEO (LAUNCHPAD)", category: "PAD" },
-  { name: "ARIEL ASAFOV", role: "CHIEF OPERATIONS OFFICER", category: "SOFTWARE" },
-  { name: "VLAD FILATOV", role: "CHIEF ADMINISTRATION OFFICER", category: "SOFTWARE" },
-  { name: "MITCHELL GIRAO", role: "FRACTIONAL CHIEF COMPLIANCE OFFICER", category: "SOFTWARE" },
-  { name: "JAYSON BURGESS", role: "CHIEF MARKETING OFFICER", category: "SOFTWARE" },
-  { name: "VLAD NAZAR", role: "HEAD OF BUSINESS DEVELOPMENT", category: "SOFTWARE" },
-  { name: "DR. ADNAN TARIQ (PH.D.)", role: "HEAD OF AI & CTO", category: "AI" },
-  { name: "CHRIS DUGGAN", role: "SENIOR MARKETING MANAGER", category: "SOFTWARE" },
-  { name: "KAINAAT", role: "HEAD OF DELIVERY", category: "SOFTWARE" },
-  { name: "NEON", role: "HEAD OF RESEARCH", category: "AI" },
-  { name: "DASTIN ADAMOWSKI", role: "PRODUCT MANAGER", category: "PAD" },
-  { name: "YIGIT GOK", role: "PERFORMANCE MARKETEER", category: "SOFTWARE" },
-  { name: "CAMERON FRENCH", role: "DEPUTY CHIEF COMPLIANCE OFFICER", category: "SOFTWARE" },
-  { name: "LEDA R.", role: "PEOPLE AND TALENT LEAD", category: "SOFTWARE" },
-  { name: "STORM", role: "PROJECT COORDINATOR", category: "PAD" },
-  { name: "MARYAM NASEEM", role: "TECH LEAD", category: "AIVM" },
-  { name: "ADRIAN KALININ", role: "SENIOR SOFTWARE ENGINEER", category: "AIVM" },
-  { name: "UTHMAN YAYI", role: "COMMUNITY MANAGER", category: "LABS" },
-  { name: "ABDUL QADIR DAUDA", role: "COMMUNITY MANAGER", category: "LABS" },
+  { name: "FULL-STACK ENGINEER", role: "10+ YRS · EX-FAANG · TECHNICAL", category: "TECH" },
+  { name: "FRONTEND SPECIALIST", role: "8+ YRS · REACT, ANGULAR, VUE", category: "TECH" },
+  { name: "BACKEND ENGINEER", role: "12+ YRS · JAVA, GO, PYTHON", category: "TECH" },
+  { name: "DEVOPS / SRE EXPERT", role: "9+ YRS · AWS, K8S, TERRAFORM", category: "TECH" },
+  { name: "MOBILE ENGINEER", role: "8+ YRS · iOS & ANDROID", category: "TECH" },
+  { name: "DATA SCIENTIST", role: "10+ YRS · ML & ANALYTICS", category: "DATA" },
+  { name: "DATA ENGINEER", role: "9+ YRS · SPARK, KAFKA, SQL", category: "DATA" },
+  { name: "ML / AI ENGINEER", role: "8+ YRS · LLMS & DEEP LEARNING", category: "DATA" },
+  { name: "PRODUCT MANAGER", role: "11+ YRS · SAAS & FINTECH", category: "PRODUCT" },
+  { name: "UX / UI DESIGNER", role: "9+ YRS · PRODUCT DESIGN", category: "PRODUCT" },
+  { name: "ENGINEERING MANAGER", role: "14+ YRS · TEAM LEADERSHIP", category: "LEADERSHIP" },
+  { name: "VP OF ENGINEERING", role: "16+ YRS · SCALING TEAMS", category: "LEADERSHIP" },
+  { name: "SALES INTERVIEWER", role: "10+ YRS · B2B SAAS SALES", category: "NONTECH" },
+  { name: "HR & TALENT EXPERT", role: "12+ YRS · TALENT ACQUISITION", category: "NONTECH" },
+  { name: "FINANCE INTERVIEWER", role: "11+ YRS · FP&A, AUDIT", category: "NONTECH" },
+  { name: "CUSTOMER SUCCESS LEAD", role: "9+ YRS · CS & SUPPORT", category: "NONTECH" },
 ];
 
 interface Filter {
@@ -46,18 +42,18 @@ interface Filter {
 }
 
 const FILTERS: Filter[] = [
-  { label: "ALL TEAM", category: "ALL" },
-  { label: "SOFTWARE", category: "SOFTWARE" },
-  { label: "AI", category: "AI" },
-  { label: "PAD", category: "PAD" },
-  { label: "AIVM", category: "AIVM" },
-  { label: "LABS", category: "LABS" },
+  { label: "ALL EXPERTS", category: "ALL" },
+  { label: "TECH", category: "TECH" },
+  { label: "NON-TECH", category: "NONTECH" },
+  { label: "LEADERSHIP", category: "LEADERSHIP" },
+  { label: "DATA & AI", category: "DATA" },
+  { label: "PRODUCT", category: "PRODUCT" },
 ];
 
 const OCTAGON_CLIP =
   "polygon(14% 0,86% 0,100% 14%,100% 86%,86% 100%,14% 100%,0 86%,0 14%)";
 
-const PARTNER_CHIPS = ["CEX", "CLOUD", "LAYER 1", "ORACLE"];
+const PARTNER_CHIPS = ["IT", "FINANCE", "RETAIL", "HEALTHCARE"];
 
 function initials(name: string): string {
   const words = name
@@ -98,13 +94,13 @@ export function TeamSection() {
       </div>
       <div className="mt-4 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <h2 className="font-sans text-[clamp(2.5rem,6vw,64px)] leading-[1.02]">
-          Faces behind
+          Our Expert
           <br />
-          <span className="cgpt-gradient-text">ChainGPT</span>
+          <span className="cgpt-gradient-text">Interviewers</span>
         </h2>
         <p className="max-w-sm text-base text-cgpt-muted">
-          Learn more about our core team, and get familiar with our partners
-          &amp; advisors
+          A global network of 4500+ industry-specific interviewers from top MNCs
+          and startups, across 250+ technologies
         </p>
       </div>
 
@@ -114,11 +110,11 @@ export function TeamSection() {
           <span className="pointer-events-none absolute -left-1 -top-1 h-3 w-3 border-l border-t border-cgpt-fg/50" />
           <span className="pointer-events-none absolute -bottom-1 -right-1 h-3 w-3 border-b border-r border-cgpt-fg/50" />
           <span className="block px-4 py-2.5 font-mono text-[12px] uppercase tracking-wide text-cgpt-fg">
-            THE TEAM <span className="text-cgpt-muted">[28]</span>
+            EXPERTS <span className="text-cgpt-muted">[4500+]</span>
           </span>
         </div>
         <span className="px-4 py-2.5 font-mono text-[12px] uppercase tracking-wide text-cgpt-muted transition-colors hover:text-cgpt-fg">
-          ADVISORS &amp; AMBASSADORS <span className="opacity-70">[8]</span>
+          TECHNOLOGIES <span className="opacity-70">[250+]</span>
         </span>
       </div>
 
@@ -188,9 +184,9 @@ export function TeamSection() {
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <span className="font-mono text-[12px] uppercase tracking-wide text-cgpt-fg">
-              Partners &amp; Projects
+              Industries We Serve
             </span>
-            <span className="font-mono text-[12px] text-cgpt-muted">(184)</span>
+            <span className="font-mono text-[12px] text-cgpt-muted">(40+)</span>
           </div>
           <a
             href="#partners"
@@ -213,7 +209,7 @@ export function TeamSection() {
           href="#partners"
           className="mt-5 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-wide text-cgpt-fg transition-colors hover:text-cgpt-violet-light"
         >
-          Explore all our innovative network
+          Explore our full interviewer network
           <ArrowRightIcon className="h-3 w-auto" />
         </a>
       </div>

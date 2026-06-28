@@ -17,51 +17,53 @@ interface CaseStudy {
 const CASE_STUDIES: CaseStudy[] = [
   {
     title:
-      "How Flipper Leveraged ChainGPT's AI-Driven SDK to Transform Perp Trading Onboarding, Transparency & Engagement in 2 Weeks",
-    tag: "CHAINGPT AI",
-  },
-  {
-    title: "How SmartSentinels Shipped Four AI Tools With ChainGPT",
-    tag: "CHAINGPT AI",
+      "How Quantiphi Cut Time-to-Hire by 75% Using InCruiter's Interview as a Service",
+    tag: "INTERVIEW AS A SERVICE",
   },
   {
     title:
-      "How Cryptorafts Powered Web3 Decision-Making with ChainGPT's AI-Powered Toolkit",
-    tag: "CHAINGPT AI",
+      "How Xpheno Scaled High-Volume Tech Hiring with 4500+ Expert Interviewers",
+    tag: "INCRUITER AI",
   },
   {
     title:
-      "Bitsave Protocol Enhanced Onchain Savings with ChainGPT's AI Chatbot",
+      "How Manhattan Associates Eliminated Interview Fatigue by Outsourcing Panels",
+    tag: "INTERVIEW AS A SERVICE",
+  },
+  {
+    title:
+      "How Welspun Standardized Hiring with Structured, Data-Driven Evaluations",
     tag: "ANNOUNCEMENTS",
   },
   {
     title:
-      "ExamHelper AI Revolutionizes Web3 & STEM Education with ChainGPT's AI API",
-    tag: "CHAINGPT AI",
+      "How Atomberg Saved 80% on Hiring Costs with IncBot AI Interviews",
+    tag: "INCRUITER AI",
   },
   {
     title:
-      "DinoX Upgrades Web3 GameFi with ChainGPT's AI-Powered API Integration",
-    tag: "ANNOUNCEMENTS",
-  },
-  {
-    title: "How BlockAI Revolutionized On-Chain Intelligence with ChainGPT",
-    tag: "CHAINGPT AI",
+      "How Lumen Achieved a 70% Round-2 Conversion Rate with IncServe",
+    tag: "INTERVIEW AS A SERVICE",
   },
   {
     title:
-      "How AlloX Enhanced User Confidence and Web3 Engagement with ChainGPT's Web3 AI Chatbot",
-    tag: "ANNOUNCEMENTS",
+      "How an IT Staffing Leader Delivered Interview Feedback in Under 6 Hours",
+    tag: "INCRUITER AI",
   },
   {
     title:
-      "How Mushee Supercharged Web3 User Experience with ChainGPT's AI-Powered API",
+      "How a Global Enterprise Stopped Interview Fraud with Deepfake Detection",
     tag: "ANNOUNCEMENTS",
   },
   {
     title:
-      "How GemBots Arena Transformed Web3 Trading with ChainGPT's Web3 AI APIs",
-    tag: "CHAINGPT AI",
+      "How a Fintech Scaleup White-Labelled Its Entire Interview Experience",
+    tag: "ANNOUNCEMENTS",
+  },
+  {
+    title:
+      "How a SaaS Company Hired 4X Faster Across India, USA & UAE with InCruiter",
+    tag: "INCRUITER AI",
   },
 ];
 
@@ -187,7 +189,7 @@ export function CaseStudies() {
           href="#case-studies"
           className="cgpt-gradient-border cgpt-glass font-mono flex items-center gap-2 rounded-md px-6 py-3 text-[12px] uppercase tracking-[0.04em] text-cgpt-fg transition-colors hover:text-cgpt-fg-bright"
         >
-          Explore All ChainGPT Case Studies
+          Explore All InCruiter Case Studies
           <ArrowDiagonalIcon />
         </a>
       </div>

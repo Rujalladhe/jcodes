@@ -16,39 +16,39 @@ interface HeroState {
 
 const STATES: HeroState[] = [
   {
-    prompt: "ANALYZE THIS TOKEN'S ON-CHAIN ACTIVITY AND MARKET TRENDS",
+    prompt: "CONDUCT A SENIOR BACKEND INTERVIEW AND SCORE THE CANDIDATE FOR ME",
+    status: "INTERVIEWING IN",
+    category: "AI INTERVIEW",
+    title: "INCBOT AI INTERVIEW",
+    bullets: ["CONVERSATIONAL AI INTERVIEWS", "DYNAMIC FOLLOW-UP QUESTIONS", "REAL-TIME SKILL SCORING", "STRUCTURED FEEDBACK REPORTS"],
+  },
+  {
+    prompt: "OUTSOURCE 50 TECHNICAL INTERVIEWS TO EXPERT INTERVIEWERS THIS WEEK",
+    status: "ASSIGNING IN",
+    category: "INTERVIEW AS A SERVICE",
+    title: "INCSERVE NETWORK",
+    bullets: ["4500+ EXPERT INTERVIEWERS", "250+ TECHNOLOGIES COVERED", "6-HOUR TURNAROUND TIME", "UNBIASED EVALUATIONS"],
+  },
+  {
+    prompt: "MATCH THIS JOB DESCRIPTION TO THE BEST CANDIDATES IN MY PIPELINE",
     status: "ANALYZING IN",
-    category: "AI TOOLS",
-    title: "WEB3 AI CHATBOT",
-    bullets: ["REAL-TIME DATA INSIGHTS", "ON-CHAIN ANALYSIS", "TOKEN RESEARCH", "LIVE MARKET UPDATES"],
+    category: "AI FEATURES",
+    title: "JD TO CV MATCHING",
+    bullets: ["JD-TO-CV MATCHING", "WRITE MY JD", "AUTO SCREENING QUESTIONS", "INBUILT ATS"],
   },
   {
-    prompt: "DEPLOY MY CUSTOM AI MODEL ON THIS DECENTRALIZED INFRASTRUCTURE",
-    status: "DEPLOYING ON",
-    category: "AI VIRTUAL MACHINE",
-    title: "AI VIRTUAL MACHINE",
-    bullets: ["ON-CHAIN LLM TRAINING", "DECENTRALIZED AI", "GPU MARKETPLACE", "AI DATA MARKETPLACE"],
+    prompt: "RUN A LIVE VIDEO INTERVIEW ON A CHEAT-PROOF PROCTORED PLATFORM",
+    status: "STARTING IN",
+    category: "VIDEO INTERVIEW",
+    title: "INCVID PLATFORM",
+    bullets: ["LIVE CODE COLLABORATION", "AI-POWERED PROCTORING", "BUILT-IN EVALUATIONS", "WHITE-LABELLED REPORTS"],
   },
   {
-    prompt: "AUDIT AND DEPLOY MY ERC-20 SMART CONTRACT FOR POTENTIAL ISSUES",
-    status: "ANALYZING IN",
-    category: "AI TOOLS",
-    title: "SMART CONTRACT AUDITOR",
-    bullets: ["GENERATE AND AUDIT", "DETECT EXPLOITS", "DEPLOY CONTRACTS ON-CHAIN", "GAS OPTIMIZATION"],
-  },
-  {
-    prompt: "BUILD AN AI-POWERED TRADING BOT WITH A CUSTOM TOKEN ON BNB CHAIN",
-    status: "BUILDING IN",
-    category: "AI TOOLS",
-    title: "AI AGENTS LAUNCHER",
-    bullets: ["NO-CODE AI AGENT LAUNCHPAD", "TRAIN YOUR OWN AGENT", "BIND TO EXISTING CHAT", "BIND TO A TOKEN"],
-  },
-  {
-    prompt: "GENERATE AND MINT A CYBERPUNK-STYLE PFP NFT COLLECTION",
-    status: "GENERATING IN",
-    category: "AI TOOLS",
-    title: "AI NFT GENERATOR",
-    bullets: ["TEXT-TO-IMAGE AI", "ON-CHAIN MINTING", "SEAMLESS NFT CREATION", "20+ NETWORKS SUPPORTED"],
+    prompt: "FLAG ANY FACE-SWAP OR AI-VOICE FRAUD IN THIS INTERVIEW RECORDING",
+    status: "SCANNING IN",
+    category: "AI INTEGRITY",
+    title: "DEEPFAKE DETECTION",
+    bullets: ["DETECT ALTERED VIDEOS", "FACE-SWAP DETECTION", "AI VOICE & AVATAR DETECTION", "RISK SCORE IN REPORT"],
   },
 ];
 
@@ -216,14 +216,14 @@ export function HeroSection() {
         {/* BOTTOM: title block */}
         <div className="relative z-20 pb-16">
           <p className="font-mono mb-4 text-sm uppercase tracking-[0.15em] text-cgpt-fg/80">
-            Unleash the Power of
+            Augmented AI for Precision Hiring
           </p>
           {/* Heading wrapped in a static red HUD frame — rounded corners on the
               left, chamfered notches on the right, plus a mid divider line. Same
               look as the connector beams but a plain red stroke, no animation.
               fill="none" is set explicitly so the path renders as an outline,
               never a filled shape. */}
-          <div className="relative inline-block pb-5 pl-5 pr-9 pt-4">
+          <div className="relative inline-block pb-12 pl-8 pr-16 pt-7">
             <svg
               aria-hidden
               viewBox="0 0 600 260"
@@ -232,7 +232,7 @@ export function HeroSection() {
               className="pointer-events-none absolute inset-0 h-full w-full"
             >
               <path
-                d="M 564 70 L 564 40 L 530 6 L 26 6 Q 6 6 6 26 L 6 234 Q 6 254 26 254 L 150 254 L 178 226 M 230 150 L 540 150 L 566 124"
+                d="M 566 70 L 566 40 L 532 6 L 26 6 Q 6 6 6 26 L 6 234 Q 6 254 26 254 L 150 254 L 178 226 M 210 222 L 540 222 L 568 196"
                 fill="none"
                 stroke="#ff2d46"
                 strokeWidth={2}
@@ -244,9 +244,9 @@ export function HeroSection() {
             </svg>
 
             <h1 className="relative font-sans text-[clamp(3.5rem,9vw,77px)] leading-[0.98]">
-              Blockchain
+              Interview
               <br />
-              <span className="pr-2">AI</span>
+              <span className="pr-2">as a Service</span>
             </h1>
           </div>
           {/* Tagline framed by red HUD corner brackets — top-left + bottom-right */}
@@ -254,7 +254,7 @@ export function HeroSection() {
             <span className="pointer-events-none absolute left-0 top-0 h-8 w-11 border-l-2 border-t-2 border-cgpt-violet" />
             <span className="pointer-events-none absolute bottom-0 right-0 h-8 w-11 border-b-2 border-r-2 border-cgpt-violet" />
             <p className="text-base text-cgpt-fg/70 lg:text-right">
-              Your personal expert in all crypto &amp; blockchain related topics.
+              AI-powered interview solutions that help you hire 4X faster &amp; cut hiring costs by up to 80%.
             </p>
           </div>
         </div>

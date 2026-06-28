@@ -9,100 +9,65 @@ import {
   ArrowDiagonalIcon,
 } from "@/components/icons";
 
-type PhaseStatus = "IN PROGRESS" | "COMPLETED";
+type PhaseStatus = "SETUP" | "INVITE" | "AI LIVE" | "REPORT";
 
 interface Phase {
   status: PhaseStatus;
   period: string;
   bullets: string[];
-  moreCount: number;
+  note: string;
 }
 
 const PHASES: Phase[] = [
   {
-    status: "IN PROGRESS",
-    period: "2025: Q3-Q4",
+    status: "SETUP",
+    period: "Create a Position",
     bullets: [
-      "Crypto AI Hub v2: Advanced trading signals, on-chain AI analytics, and research dashboards.",
-      "ChainGPT Pad Upgrade: Adds Buzzdrops, IBOs, and social trading tools.",
-      "AIVM Testnet Launch: Public testnet with decentralized AI execution, GPU marketplace, and agent framework.",
-      "Solidity LLM v2: Enterprise-grade release supported by Alibaba Cloud.",
-      "CGPT.Fun Launch: Meme-coin ecosystem and AI agent playground on BNB Chain.",
+      "Enter job details, required skills, and experience.",
+      "Upload your JD or have AI write it for you.",
+      "JD-to-CV matching ranks the best-fit candidates.",
     ],
-    moreCount: 0,
+    note: "Takes under 2 minutes",
   },
   {
-    status: "COMPLETED",
-    period: "2025: Q1-Q2",
+    status: "SETUP",
+    period: "Set Up the Interview",
     bullets: [
-      "AIVM Blockchain Prototype: Devnet, Whitepaper, Developer CLI, AI Agent Runtime.",
-      "Solidity LLM Open-Sourced: Smart Contract AI Model (Alibaba Cloud partnership).",
-      "AgenticOS Framework Released: Open-source AI agents toolkit.",
-      "Web3 AI Chatbot Enhanced: Real-time analytics (tokens, DeFi, NFTs, macro insights).",
-      "$CGPT Token Major Listings: Binance, Bybit & KuCoin derivatives, Solana (Raydium).",
+      "Pick the position and interview format.",
+      "Add screening questions or auto-generate them with AI.",
+      "Configure proctoring, branding, and evaluations.",
     ],
-    moreCount: 46,
+    note: "Fully configurable",
   },
   {
-    status: "COMPLETED",
-    period: "2024: Q3-Q4",
+    status: "INVITE",
+    period: "Send Invites",
     bullets: [
-      "AI Trading Assistant v1 Released.",
-      "AIVM Blockchain Initial Development.",
-      "Enhanced AI NFT Generator.",
-      "Crypto AI Hub Revamped.",
-      "ChainGPT Pad v2 Launch & Integrations.",
-      "Mobile App Launched (iOS & Android).",
+      "Private or public interview links.",
+      "Invite candidates one-by-one or in bulk.",
+      "Email & WhatsApp reminders keep dropouts at zero.",
     ],
-    moreCount: 40,
+    note: "Zero dropouts",
   },
   {
-    status: "COMPLETED",
-    period: "2024: Q1-Q2",
+    status: "AI LIVE",
+    period: "AI Conducts the Interview",
     bullets: [
-      "CryptoGuard Web3 Security Extension.",
-      "$1M Web3 AI Grant Program.",
-      "AI Hub Enhanced (Cross-chain swaps, Tron).",
-      "AI NFT Generator Updated (Marketplace, diverse styles).",
-      "ChainGPT Pad v2 beta (Solana, Base, BRC-20).",
+      "Conversational AI asks and follows up dynamically.",
+      "Real-time interpretation and skill analysis.",
+      "Deepfake & AI-voice detection running live.",
     ],
-    moreCount: 34,
+    note: "4X faster, 100% automated",
   },
   {
-    status: "COMPLETED",
-    period: "2023: Q3-Q4",
+    status: "REPORT",
+    period: "Get Feedback Reports",
     bullets: [
-      "ChainGPT Pad & AI NFT Generator DApps.",
-      "ChainGPT AI (Discord & Twitter Pilot).",
-      "Crypto AI Hub & AI-News Platform.",
-      "AI Trading Assistant Launch.",
-      "Tron Network & Enhanced Wallet Integration.",
+      "Full transcript and per-skill scores.",
+      "Strengths, weaknesses, and a clear recommendation.",
+      "White-labelled, shareable reports in ~2 hours.",
     ],
-    moreCount: 22,
-  },
-  {
-    status: "COMPLETED",
-    period: "2023: Q1-Q2",
-    bullets: [
-      "AI Chatbot Prototype & Telegram Bot.",
-      "$CGPT Staking, Farming & DAO Voting.",
-      "AI Smart Contract Auditor & Generator.",
-      "AI NFT Generator Beta.",
-      "$CGPT Public & Private Sales.",
-    ],
-    moreCount: 19,
-  },
-  {
-    status: "COMPLETED",
-    period: "2022: Q3-Q4",
-    bullets: [
-      "ChainGPT Project Inception.",
-      "Core Team Assembled.",
-      "AI Proof of Concept.",
-      "Tokenomics & Burn Mechanism Established.",
-      "Whitepaper v1 Released.",
-    ],
-    moreCount: 14,
+    note: "Feedback in ~2 hours",
   },
 ];
 
@@ -124,14 +89,14 @@ export function RoadmapSection() {
             <DoubleDotsIcon className="text-cgpt-fg" />
           </div>
           <h2 className="font-sans text-[clamp(2.5rem,6vw,64px)] leading-[1.02]">
-            Explore our
+            How It
             <br />
-            <span className="cgpt-gradient-text">Roadmap</span>
+            <span className="cgpt-gradient-text">Works</span>
           </h2>
           <p className="mt-5 max-w-md text-[15px] text-cgpt-fg/70">
-            This is a short version of our roadmap.{" "}
-            <a href="#" className="cgpt-gradient-text underline-offset-2 hover:underline">
-              Read full version here
+            From job posting to hire — InCruiter automates every step.{" "}
+            <a href="#join" className="cgpt-gradient-text underline-offset-2 hover:underline">
+              Book a demo
             </a>
           </p>
         </div>
@@ -171,7 +136,7 @@ export function RoadmapSection() {
 }
 
 function RoadmapCard({ phase, index }: { phase: Phase; index: number }) {
-  const inProgress = phase.status === "IN PROGRESS";
+  const inProgress = phase.status === "AI LIVE";
 
   return (
     <article className="flex w-[88vw] max-w-[440px] shrink-0 snap-start flex-col rounded-xl border border-cgpt-line bg-cgpt-card/60 p-5 sm:w-[440px]">
@@ -190,7 +155,7 @@ function RoadmapCard({ phase, index }: { phase: Phase; index: number }) {
       {/* RDMP + status */}
       <div className="mt-5 flex items-center justify-between">
         <span className="font-mono text-[12px] uppercase tracking-[0.12em] text-cgpt-muted">
-          RDMP {index} &#9656;
+          STEP {index} &#9656;
         </span>
         <span
           className={cn(
@@ -220,7 +185,7 @@ function RoadmapCard({ phase, index }: { phase: Phase; index: number }) {
       {/* Footer */}
       <div className="mt-6 flex items-center justify-between border-t border-cgpt-line pt-4">
         <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-cgpt-muted">
-          AND {phase.moreCount} MORE ITEMS
+          {phase.note}
         </span>
         <a
           href="#"
