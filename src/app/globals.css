@@ -111,7 +111,7 @@
   --cgpt-fg: #efefe5;
   --cgpt-fg-bright: #f8f8fa;
   --cgpt-muted: #8b8b96;
-  --cgpt-line: rgba(255, 255, 255, 0.1);
+  --cgpt-line: rgba(255, 255, 255, 0.16);
   --cgpt-card: #101018;
   --cgpt-card-2: #15151f;
 
@@ -146,7 +146,7 @@
   --cgpt-fg: #efefe5;
   --cgpt-fg-bright: #f8f8fa;
   --cgpt-muted: #9a9aa4;
-  --cgpt-line: rgba(255, 255, 255, 0.1);
+  --cgpt-line: rgba(255, 255, 255, 0.16);
   --cgpt-card: #1f1f24;
   --cgpt-card-2: #26262c;
 
@@ -182,12 +182,31 @@
   }
   html {
     @apply font-sans;
-    scroll-behavior: smooth;
+    /* Smooth scrolling is handled by Lenis (see SmoothScroll.tsx); a CSS
+       `scroll-behavior: smooth` here would fight Lenis's programmatic scrolls. */
   }
   /* Roboto Mono is used for nav links, labels, eyebrows */
   .font-mono {
     font-family: var(--font-roboto-mono), "Roboto Mono", monospace;
   }
+}
+
+/* ===== Lenis smooth scroll (recommended base styles) ===== */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }
 
 /* ===== ChainGPT utilities ===== */
@@ -246,6 +265,13 @@
     text-transform: uppercase;
     letter-spacing: 0.04em;
     font-size: 0.75rem;
+  }
+  /* Faint HUD grid — used behind console / panel surfaces */
+  .cgpt-hud-grid {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    background-size: 34px 34px;
   }
 }
 

@@ -55,8 +55,13 @@ const STATES: HeroState[] = [
 // HUD connector beams that frame the robot in the hero — red flowing light, the
 // same look as the Solutions section. Drawn in a 1000×600 space (preserveAspectRatio
 // none): one runs across the top, the other brackets down the right toward the labels.
-const HERO_BEAM_A = "M 350 130 L 470 130 L 540 78 L 985 78";
-const HERO_BEAM_B = "M 985 78 L 985 430";
+// The top-right corner is chamfered (a small ~45° bevel) instead of a square
+// corner — the top beam runs to (967,78), cuts a short diagonal to (985,96), and
+// the vertical drops from there. The bevel is kept small so it stays up at the
+// corner and never reaches down into the "WEB3 AI CHATBOT" box below it. The two
+// beams stay joined at (985,96) so the light flows through.
+const HERO_BEAM_A = "M 350 130 L 470 130 L 540 78 L 967 78 L 985 96";
+const HERO_BEAM_B = "M 985 96 L 985 430";
 
 export function HeroSection() {
   const [i, setI] = useState(0);
@@ -72,6 +77,7 @@ export function HeroSection() {
   // the right-hand text lists), then fades out as the "Our Solutions" section enters.
   useEffect(() => {
     const SCALE = 1.30;
+    const DROP_Y = 38; // pull the robot ~1cm down (96px/in ÷ 2.54 ≈ 38px/cm)
     const onScroll = () => {
       const el = robotRef.current;
       if (!el) return;
@@ -94,7 +100,7 @@ export function HeroSection() {
         o = Math.min(1, Math.max(0, (top - vh * 0.3) / (vh * 0.85 - vh * 0.3)));
       }
 
-      el.style.transform = `translateX(${tx.toFixed(1)}px) scale(${SCALE})`;
+      el.style.transform = `translate(${tx.toFixed(1)}px, ${DROP_Y}px) scale(${SCALE})`;
       el.style.opacity = o.toFixed(3);
       el.style.pointerEvents = o > 0.05 ? "auto" : "none";
     };
@@ -137,6 +143,12 @@ export function HeroSection() {
       </div>
 
       <div className="relative mx-auto flex min-h-[calc(100vh-72px)] max-w-[1320px] flex-col px-5 lg:px-8">
+        {/* White HUD frame brackets — thin corner rails (vertical + horizontal)
+            hugging the left edge, matching the screenshot's corner lines. */}
+        <span aria-hidden className="pointer-events-none absolute left-1 top-6 hidden h-24 w-28 rounded-tl-2xl border-l border-t border-white/20 lg:block" />
+        <span aria-hidden className="pointer-events-none absolute left-1 top-14 hidden h-12 w-12 rounded-tl-lg border-l border-t border-white/15 lg:block" />
+        <span aria-hidden className="pointer-events-none absolute bottom-32 left-1 hidden h-28 w-24 rounded-bl-2xl border-b border-l border-white/20 lg:block" />
+
         {/* HUD connector beams — red flowing light framing the robot, sitting
             behind it (z-2 < robot z-30). */}
         <svg
@@ -153,13 +165,17 @@ export function HeroSection() {
 
         {/* HUD overlay grid */}
         <div className="relative flex flex-1 items-start pt-10">
-          {/* LEFT: cycling prompt box */}
-          <div className="z-20 hidden max-w-[420px] lg:block">
-            <div className="relative rounded-md border border-cgpt-line bg-cgpt-bg/40 p-5">
-              <span className="cgpt-gradient-text text-3xl leading-none">&ldquo;</span>
-              <p key={s.prompt} className="font-mono mt-3 text-[13px] uppercase leading-relaxed tracking-wide text-cgpt-fg/90 [animation:cgpt-fade-up_.5s_ease]">
-                {s.prompt}
-              </p>
+          {/* LEFT: cycling prompt box, with a white HUD connector running out to the right */}
+          <div className="z-20 hidden max-w-120 lg:block">
+            <div className="flex items-center gap-3">
+              <div className="relative flex-1 rounded-md border border-cgpt-line bg-cgpt-bg/40 p-5">
+                <span className="cgpt-gradient-text text-3xl leading-none">&ldquo;</span>
+                <p key={s.prompt} className="font-mono mt-3 text-[13px] uppercase leading-relaxed tracking-wide text-cgpt-fg/90 [animation:cgpt-fade-up_.5s_ease]">
+                  {s.prompt}
+                </p>
+              </div>
+              <span aria-hidden className="text-white/55">&#9656;</span>
+              <span aria-hidden className="h-px w-10 bg-white/20" />
             </div>
           </div>
 
@@ -173,19 +189,24 @@ export function HeroSection() {
                 <DoubleDotsIcon className="text-cgpt-fg" />
               </span>
             </div>
-            <div className="mt-3 flex justify-end">
+            <div className="mt-3 flex items-center justify-end gap-2">
+              <span aria-hidden className="h-px w-10 bg-white/20" />
+              <span aria-hidden className="text-white/55">&#9656;</span>
               <span className="rounded-md border border-cgpt-line px-4 py-2 font-mono text-[12px] uppercase tracking-wide text-cgpt-fg">
                 {s.title}
               </span>
             </div>
-            <ul className="mt-5 space-y-3">
+            {/* Bullets, each prefixed by a white HUD connector rail + ◄ that runs
+                back toward the robot — matches the screenshot's right-hand lines. */}
+            <ul className="mt-5 -ml-25 w-110 space-y-4">
               {s.bullets.map((b) => (
                 <li
                   key={b}
-                  className="font-mono flex items-center justify-end gap-2 border-b border-cgpt-line/60 pb-2 text-[12px] uppercase tracking-wide text-cgpt-muted"
+                  className="font-mono flex items-center gap-3 text-[12px] uppercase tracking-wide text-cgpt-muted"
                 >
-                  <span className="text-cgpt-violet-light">&#9666;</span>
-                  {b}
+                  <span aria-hidden className="h-px flex-1 bg-white/20" />
+                  <span aria-hidden className="text-white/55">&#9666;</span>
+                  <span className="whitespace-nowrap">{b}</span>
                 </li>
               ))}
             </ul>
@@ -197,25 +218,45 @@ export function HeroSection() {
           <p className="font-mono mb-4 text-sm uppercase tracking-[0.15em] text-cgpt-fg/80">
             Unleash the Power of
           </p>
-          <h1 className="font-sans text-[clamp(3.5rem,9vw,77px)] leading-[0.98]">
-            <span className="relative inline-block">
-              Blockchain
-              <span
-                className="absolute -bottom-1 left-0 h-[3px] w-full rounded-full"
-                style={{ background: "var(--cgpt-gradient)" }}
+          {/* Heading wrapped in a static red HUD frame — rounded corners on the
+              left, chamfered notches on the right, plus a mid divider line. Same
+              look as the connector beams but a plain red stroke, no animation.
+              fill="none" is set explicitly so the path renders as an outline,
+              never a filled shape. */}
+          <div className="relative inline-block pb-5 pl-5 pr-9 pt-4">
+            <svg
+              aria-hidden
+              viewBox="0 0 600 260"
+              preserveAspectRatio="none"
+              fill="none"
+              className="pointer-events-none absolute inset-0 h-full w-full"
+            >
+              <path
+                d="M 564 70 L 564 40 L 530 6 L 26 6 Q 6 6 6 26 L 6 234 Q 6 254 26 254 L 150 254 L 178 226 M 230 150 L 540 150 L 566 124"
+                fill="none"
+                stroke="#ff2d46"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                vectorEffect="non-scaling-stroke"
+                style={{ filter: "drop-shadow(0 0 5px rgba(255,45,70,0.5))" }}
               />
-            </span>
-            <br />
-            <span className="relative inline-flex items-center">
+            </svg>
+
+            <h1 className="relative font-sans text-[clamp(3.5rem,9vw,77px)] leading-[0.98]">
+              Blockchain
+              <br />
               <span className="pr-2">AI</span>
-              {/* corner brackets around AI */}
-              <span className="pointer-events-none absolute -left-3 -top-3 h-4 w-4 rounded-tl-[3px] border-l border-t border-white/40" />
-              <span className="pointer-events-none absolute -bottom-3 -right-3 h-4 w-4 rounded-br-[3px] border-b border-r border-white/40" />
-            </span>
-          </h1>
-          <p className="mt-6 max-w-xs text-base text-cgpt-fg/70 lg:ml-auto lg:text-right">
-            Your personal expert in all crypto &amp; blockchain related topics.
-          </p>
+            </h1>
+          </div>
+          {/* Tagline framed by red HUD corner brackets — top-left + bottom-right */}
+          <div className="relative mt-6 max-w-sm px-9 py-7 lg:ml-auto">
+            <span className="pointer-events-none absolute left-0 top-0 h-8 w-11 border-l-2 border-t-2 border-cgpt-violet" />
+            <span className="pointer-events-none absolute bottom-0 right-0 h-8 w-11 border-b-2 border-r-2 border-cgpt-violet" />
+            <p className="text-base text-cgpt-fg/70 lg:text-right">
+              Your personal expert in all crypto &amp; blockchain related topics.
+            </p>
+          </div>
         </div>
       </div>
 

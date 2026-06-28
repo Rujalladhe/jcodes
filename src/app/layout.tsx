@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto_Mono, Inter } from "next/font/google";
 import "./globals.css";
+import { SmoothScroll } from "@/components/SmoothScroll";
 
 const robotoMono = Roboto_Mono({
   variable: "--font-roboto-mono",
@@ -45,7 +46,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full bg-cgpt-bg text-cgpt-fg">{children}</body>
+      <body className="min-h-full bg-cgpt-bg text-cgpt-fg">
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }

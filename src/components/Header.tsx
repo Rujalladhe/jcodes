@@ -5,8 +5,6 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import {
   ChevronDownIcon,
-  CloseIcon,
-  ArrowDiagonalIcon,
   EcosystemGridIcon,
   DoubleDotsIcon,
 } from "@/components/icons";
@@ -68,7 +66,6 @@ const NAV: NavItem[] = [
 ];
 
 export function Header() {
-  const [bannerOpen, setBannerOpen] = useState(true);
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -81,27 +78,6 @@ export function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-[1000]">
-      {/* Announcement bar */}
-      {bannerOpen && !scrolled && (
-        <div className="flex h-10 items-center justify-center gap-2 bg-cgpt-card-2 px-8 text-cgpt-fg">
-          <a href="#blog" className="flex items-center gap-2 text-[13px] sm:text-[15px]">
-            <span className="text-cgpt-muted">New:</span>
-            <span className="hidden truncate sm:inline">
-              ChainGPT Upgrades to v2 Staking, and Rewards Stakers With a $50,000 CGPT-Gift Giveaway
-            </span>
-            <span className="sm:hidden">ChainGPT v2 Staking — $50,000 Giveaway</span>
-            <ArrowDiagonalIcon className="text-cgpt-fg" />
-          </a>
-          <button
-            aria-label="Dismiss announcement"
-            onClick={() => setBannerOpen(false)}
-            className="absolute right-6 text-cgpt-muted transition-colors hover:text-cgpt-fg"
-          >
-            <CloseIcon />
-          </button>
-        </div>
-      )}
-
       {/* Navbar */}
       <nav
         className={cn(
