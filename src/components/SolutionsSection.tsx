@@ -1,4 +1,3 @@
-import { cn } from "@/lib/utils";
 import { ArrowDiagonalIcon, DoubleDotsIcon } from "@/components/icons";
 
 interface Solution {
@@ -98,36 +97,30 @@ const SOLUTIONS: Solution[] = [
   },
 ];
 
-// Two HUD connector beams, drawn in a 1000×560 space (preserveAspectRatio="none").
-// A single red light flows along each. The upper one hooks down into the cube's
-// top-left (pulled up high enough to clear the "ChainGPT Chatbot" heading). The
-// lower one runs straight out from under the cube, then turns up toward the
-// feature list on the right.
+// HUD connector beam, drawn in a 1000×560 space (preserveAspectRatio="none").
+// A single red light flows along it: it hooks down into the cube's top-left
+// (pulled up high enough to clear the panel heading).
 const BEAM_TOP = "M 210 150 L 210 70 L 482 64 L 482 96";
-const BEAM_BOTTOM = "M 520 500 L 900 500 L 900 430";
 
 function SolutionPanel({ solution }: { solution: Solution }) {
   return (
     <article className="relative border-t border-cgpt-line py-16">
-      {/* HUD connector beams. They sit below the fixed cube (z-5), so their inner
-          ends run under the robot — the animated red light "flows through" it. The
-          upper beam hooks into the cube's top-left; the lower beam runs straight
-          out from under the cube, then turns up toward the feature list. */}
+      {/* HUD connector beam. It sits below the fixed robot (z-5), so its inner end
+          runs under it — the animated red light "flows through". The beam hooks
+          into the robot's top-left. */}
       <svg
         aria-hidden
         viewBox="0 0 1000 560"
         preserveAspectRatio="none"
         className="pointer-events-none absolute inset-0 hidden h-full w-full lg:block"
       >
-        {/* faint static guides */}
+        {/* faint static guide */}
         <path className="cgpt-beam-base" d={BEAM_TOP} />
-        <path className="cgpt-beam-base" d={BEAM_BOTTOM} />
-        {/* flowing red beams */}
+        {/* flowing red beam */}
         <path className="cgpt-beam" pathLength={100} d={BEAM_TOP} />
-        <path className="cgpt-beam" pathLength={100} d={BEAM_BOTTOM} />
       </svg>
 
-      <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_auto_1fr] lg:items-center lg:gap-12">
+      <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center lg:gap-12">
         {/* LEFT: number, title, description, CTAs */}
         <div className="order-1 flex flex-col">
           <span className="font-mono text-[13px] tracking-widest text-cgpt-muted">
@@ -153,26 +146,9 @@ function SolutionPanel({ solution }: { solution: Solution }) {
           </div>
         </div>
 
-        {/* CENTER: reserved slot. The single pinned robot cube (declared in the
-            hero) sits here as each panel passes the middle of the viewport. */}
-        <div className="order-2 hidden h-90 w-90 lg:block" aria-hidden />
-        {/* DoubleDotsIcon kept imported for the section heading below. */}
-
-        {/* RIGHT: feature list, right-aligned */}
-        <ul className="order-3 space-y-3 lg:pl-6">
-          {solution.features.map((feature) => (
-            <li
-              key={feature}
-              className={cn(
-                "flex items-center justify-end gap-2 border-b border-cgpt-line/60 pb-2",
-                "font-mono text-[12px] uppercase tracking-wide text-white"
-              )}
-            >
-              <span className="text-cgpt-violet-light">&#9666;</span>
-              {feature}
-            </li>
-          ))}
-        </ul>
+        {/* RIGHT: open area — the pinned robot video (declared in the hero) floats
+            over this column as each panel passes the middle of the viewport. */}
+        <div className="order-2 hidden lg:block" aria-hidden />
       </div>
     </article>
   );

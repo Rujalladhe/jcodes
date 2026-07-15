@@ -81,22 +81,16 @@ export function TokenSection() {
           </p>
         </div>
 
-        {/* CENTER: coin with radial glow */}
+        {/* CENTER: coin */}
         <div className="relative order-1 flex items-center justify-center lg:order-2">
-          {/* soft radial glow */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute left-1/2 top-1/2 h-135 w-135 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-30 blur-3xl"
-            style={{ background: "var(--cgpt-gradient)" }}
-          />
           <div className="relative animate-cgpt-float">
             <Image
               src="/images/6f91bfe4-c3c1-42f8-9625-1882fe6388c0.png"
               alt="InCruiter IncBot AI engine"
-              width={680}
-              height={680}
+              width={1024}
+              height={1024}
               priority
-              className="h-auto w-100 sm:w-130 lg:w-200"
+              className="h-auto max-w-none w-80 sm:w-120 lg:w-125"
             />
           </div>
         </div>

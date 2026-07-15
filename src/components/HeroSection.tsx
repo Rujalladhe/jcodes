@@ -3,7 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { ArrowDownIcon, DoubleDotsIcon } from "@/components/icons";
-import { RobotFrames } from "@/components/RobotFrames";
+// Image-sequence A/B variant (kept commented — see the fixed wrapper below).
+// import { SolutionRobotVideo } from "@/components/SolutionRobotVideo";
+import { SolutionRobotVideoTag } from "@/components/SolutionRobotVideoTag";
 import { RobotSpline } from "@/components/RobotSpline";
 
 interface HeroState {
@@ -133,12 +135,23 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* The single pinned, viewport-centered robot cube. It's fixed (declared
+      {/* The single pinned, viewport-centered robot "video". It's fixed (declared
           once here) but stays hidden until the Solutions section scrolls into
-          view, where it animates — see RobotFrames for the scroll choreography. */}
-      <div className="pointer-events-none fixed inset-0 z-[5] flex items-center justify-center">
-        <div className="relative h-[92vh] w-full max-w-[880px]">
-          <RobotFrames />
+          view, where its 271-frame HUD sequence is scrubbed by scroll — see
+          SolutionRobotVideo for the GSAP ScrollTrigger choreography. Desktop only:
+          the reserved center column that it fills exists at lg+ and up. */}
+      <div
+        className="pointer-events-none fixed inset-0 z-[5] hidden items-center justify-center lg:flex"
+        style={{ mixBlendMode: "screen" }}
+      >
+        <div className="relative h-[70vh] w-full max-w-[1000px] lg:translate-x-[22vw]">
+          {/* Full-720p all-intra video, scroll-scrubbed: sharp AND smooth (every
+              frame is a keyframe, so seeking never stutters). */}
+          <SolutionRobotVideoTag />
+          {/* A/B: keyed image sequence. Swap by commenting <SolutionRobotVideoTag/>
+              above, uncommenting the import + this, and removing the wrapper's
+              mixBlendMode style (keyed frames are already transparent). */}
+          {/* <SolutionRobotVideo /> */}
         </div>
       </div>
 
